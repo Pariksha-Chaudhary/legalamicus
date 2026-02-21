@@ -155,8 +155,8 @@ STATICFILES_DIRS = [
 
 AUTH_USER_MODEL = 'accounts.User'
 
-RAZORPAY_KEY_ID = "rzp_test_SHEC7rQ2Sg0cyO"
-RAZORPAY_KEY_SECRET = "3kbOz3eaq6mc4HlzlP326egL"
+# RAZORPAY_KEY_ID = "rzp_test_SHEC7rQ2Sg0cyO"
+# RAZORPAY_KEY_SECRET = "3kbOz3eaq6mc4HlzlP326egL"
 
 
 
