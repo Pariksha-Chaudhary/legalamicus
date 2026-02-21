@@ -56,7 +56,7 @@ class Lawyer(models.Model):
 
     experience = models.IntegerField()
     bio = models.TextField()
-    profile_image = models.ImageField(upload_to='lawyers/', null=True, blank=True)
+
 
     whatsapp_number = models.CharField(max_length=15, null=True, blank=True)
 

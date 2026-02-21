@@ -134,16 +134,7 @@
         <div class="col-md-4 mb-4">
             <div class="lawyer-card p-4 text-center">
 
-                <!-- Profile Image -->
-                {% if lawyer.profile_image %}
-                    <img src="{{ lawyer.profile_image.url }}"
-                         class="profile-img mb-3"
-                         alt="{{ lawyer.user.username }}">
-                {% else %}
-                    <img src="{% static 'images/default-lawyer.jpg' %}"
-                         class="profile-img mb-3"
-                         alt="Default">
-                {% endif %}
+               
 
                 <!-- Name -->
                 <h5 class="text-warning">
