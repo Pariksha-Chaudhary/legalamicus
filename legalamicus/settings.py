@@ -93,7 +93,9 @@ WSGI_APPLICATION = 'legalamicus.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default=f"sqlite:///{os.path.join(BASE_DIR, 'db.sqlite3')}"
+        default=os.environ.get("DATABASE_URL"),
+        conn_max_age=600,
+        ssl_require=True
     )
 }
 
@@ -141,7 +143,7 @@ TIME_ZONE = 'UTC'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
@@ -159,13 +161,13 @@ RAZORPAY_KEY_SECRET = "3kbOz3eaq6mc4HlzlP326egL"
 
 #  for deploy 
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'legalamicus2@gmail.com'
-EMAIL_HOST_PASSWORD = 'jeuqkysinrrkcigz'
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+SECRET_KEY = os.environ.get("SECRET_KEY")
+
+RAZORPAY_KEY_ID = os.environ.get("RAZORPAY_KEY_ID")
+RAZORPAY_KEY_SECRET = os.environ.get("RAZORPAY_KEY_SECRET")
+
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
 
 # DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
@@ -181,6 +183,9 @@ TWILIO_AUTH_TOKEN = ""
 TWILIO_PHONE_NUMBER = ""
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
