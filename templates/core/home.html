@@ -1,0 +1,523 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="hero">
+    <div class="container">
+        <h1> Legal Representation.<br>For Those Who Expect Excellence.</h1>
+        <p class="mt-3 text-secondary">
+            Connect with top verified lawyers across India instantly.<br>Strategic Legal Counsel for Civil, Corporate &
+            High-Value Disputes.
+        </p>
+        <a href="/lawyers/" class="btn gold-btn btn-lg mt-4">
+            Book Consultation Now
+        </a>
+        <a href="{% url 'practice_areas' %}" class="btn gold-btn btn-lg mt-4">
+            Explore Practice Areas
+        </a>
+
+    </div>
+
+
+</section>
+
+<section class="lux-docs">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <!-- LEFT SIDE -->
+            <div class="col-lg-4 doc-left">
+                <h2>Documentation & Verification</h2>
+                <p>
+                    We provide professionally drafted legal documentation 
+                    ensuring compliance, clarity, and enforceability. 
+                    Our expert team handles drafting and verification 
+                    with strict confidentiality and precision.
+                </p>
+            </div>
+
+            <!-- RIGHT SIDE -->
+            <div class="col-lg-8">
+                <div class="row g-3 justify-content-end">
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="doc-card">
+                            <h6>Legal Notices</h6>
+                            <p>Professionally drafted dispute notices.</p>
+                            <a href="{% url 'practice:documentation' %}" class="doc-btn">Open</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="doc-card">
+                            <h6>Affidavits</h6>
+                            <p>Accurate legally compliant affidavits.</p>
+                            <a href="{% url 'practice:documentation' %}" class="doc-btn">Open</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="doc-card">
+                            <h6>Agreements</h6>
+                            <p>Business & custom legal agreements.</p>
+                            <a href="{% url 'practice:documentation' %}" class="doc-btn">Open</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="doc-card">
+                            <h6>Sale Deed</h6>
+                            <p>Property transaction documentation.</p>
+                            <a href="{% url 'practice:documentation' %}" class="doc-btn">Open</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="doc-card">
+                            <h6>Will Drafting</h6>
+                            <p>Secure succession planning services.</p>
+                            <a href="{% url 'practice:documentation' %}" class="doc-btn">Open</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="doc-card">
+                            <h6>Power of Attorney</h6>
+                            <p>General & special POA drafting.</p>
+                            <a href="{% url 'practice:documentation' %}" class="doc-btn">Open</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- why choose us -->
+
+<section class="lux-why">
+    <div class="container position-relative">
+
+        <div class="gold-divider-vertical d-none d-lg-block"></div>
+
+        <div class="row align-items-center">
+
+            <!-- LEFT SIDE -->
+            <div class="col-lg-5 why-left">
+                <h2>Why Choose Our Firm</h2>
+                <p>
+                    Our firm delivers strategic legal solutions grounded in deep 
+                    expertise, ethical practice, and client-focused representation. 
+                    We are committed to protecting your rights while ensuring 
+                    clarity, precision, and strong advocacy at every stage.
+                </p>
+            </div>
+
+            <!-- RIGHT SIDE -->
+            <div class="col-lg-7">
+
+                <div class="why-item">
+                    <div class="why-icon">⚖</div>
+                    <div class="why-text">
+                        <h6>Proven Legal Expertise</h6>
+                        <p>Extensive courtroom and advisory experience across diverse legal domains.</p>
+                    </div>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">🔐</div>
+                    <div class="why-text">
+                        <h6>Absolute Confidentiality</h6>
+                        <p>Strict adherence to professional ethics and client privacy standards.</p>
+                    </div>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">📄</div>
+                    <div class="why-text">
+                        <h6>Meticulous Documentation</h6>
+                        <p>Accurate, enforceable, and legally compliant drafting services.</p>
+                    </div>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">🏛</div>
+                    <div class="why-text">
+                        <h6>Strategic Representation</h6>
+                        <p>Focused advocacy aimed at achieving favorable legal outcomes.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CTA-->
+ <section class="lux-cta">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <!-- LEFT SIDE FORM -->
+                <div class="col-lg-7 cta-text">
+                <h2>Need Immediate <span>Legal Assistance?</span></h2>
+                <p>
+                    Schedule a confidential consultation with our experienced
+                    legal team. We provide strategic advice, clear legal guidance,
+                    and strong representation tailored to your case.
+                </p>
+            </div>
+      
+
+            <!-- RIGHT SIDE TEXT -->
+         
+
+                  <div class="col-lg-5">
+                <div class="cta-form">
+                    <h4>Request Consultation</h4>
+
+                    <form id="whatsappForm">
+                        <input type="text" id="name" placeholder="Full Name" required>
+                        <input type="tel" id="mobile" placeholder="Mobile Number" required>
+                        <textarea id="issue" rows="4" placeholder="Describe Your Legal Issue" required></textarea>
+                        <button type="submit">Submit & Connect</button>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- IMPACT SECTION -->
+<section class="py-5" style="background:#ffffff;">
+    <div class="container text-center">
+
+        <h2 class="impact-heading mb-3">
+            Our Legal Impact
+        </h2>
+        <p class="impact-subtext mb-5">
+            Trusted representation. Proven results. Measurable excellence.
+        </p>
+
+        <div class="row g-4">
+
+            <!-- Cases Solved -->
+            <div class="col-md-3 col-6">
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="bi bi-briefcase-fill"></i>
+                    </div>
+                    <h3 class="counter" data-target="2000">0</h3>
+                    <p>Cases Successfully Handled</p>
+                </div>
+            </div>
+
+            <!-- Experience -->
+            <div class="col-md-3 col-6">
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="bi bi-award-fill"></i>
+                    </div>
+                    <h3 class="counter" data-target="10">0</h3>
+                    <p>+ Years of Experience</p>
+                </div>
+            </div>
+
+            <!-- Success Rate -->
+            <div class="col-md-3 col-6">
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="bi bi-graph-up-arrow"></i>
+                    </div>
+                    <h3 class="counter" data-target="98">0</h3>
+                    <p>% Client Satisfaction</p>
+                </div>
+            </div>
+
+            <!-- Clients -->
+            <div class="col-md-3 col-6">
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="bi bi-people-fill"></i>
+                    </div>
+                    <h3 class="counter" data-target="5000">0</h3>
+                    <p>Clients Advised</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<style>
+/* ===== IMPACT SECTION ===== */
+.impact-heading {
+    color: #c6a14a;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.impact-subtext {
+    color: #000;
+    font-size: 15px;
+}
+
+.impact-card {
+    background: #ffffff;
+    padding: 40px 20px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    transition: 0.3s ease;
+    border: 1px solid #f1f1f1;
+}
+
+.impact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.impact-icon {
+    font-size: 30px;
+    color: #c6a14a;
+    margin-bottom: 15px;
+}
+
+.impact-card h3 {
+    color: #c6a14a;
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.impact-card p {
+    color: #000;
+    font-size: 14px;
+}
+
+</style>
+
+<!-- COUNTER SCRIPT -->
+<script>
+const counters = document.querySelectorAll('.counter');
+const speed = 200;
+
+counters.forEach(counter => {
+    const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = target / speed;
+
+        if (count < target) {
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(updateCount, 15);
+        } else {
+            counter.innerText = target + "+";
+        }
+    };
+    updateCount();
+});
+</script>
+<!-- ROYAL CERTIFICATION & BAR COUNCIL STRIP -->
+<section class="py-5 royal-badge-section">
+    <div class="container text-center">
+
+        <h3 class="royal-heading mb-4">
+            Recognized & Professionally Accredited
+        </h3>
+
+        <div class="row justify-content-center align-items-center g-4">
+
+            <!-- ISO Badge -->
+            <div class="col-md-3 col-6">
+                <div class="royal-badge">
+                    <div class="badge-icon">
+                        <i class="bi bi-patch-check-fill"></i>
+                    </div>
+                    <h6>ISO Certified</h6>
+                    <p>Quality & Compliance Standards</p>
+                </div>
+            </div>
+
+            <!-- Bar Council -->
+            <div class="col-md-3 col-6">
+                <div class="royal-badge">
+                    <div class="badge-icon">
+                        <i class="bi bi-bank2"></i>
+                    </div>
+                    <h6>Bar Council Registered</h6>
+                    <p>Authorized Legal Practice</p>
+                </div>
+            </div>
+
+            <!-- Supreme Court -->
+            <div class="col-md-3 col-6">
+                <div class="royal-badge">
+                    <div class="badge-icon">
+                        <i class="bi bi-building"></i>
+                    </div>
+                    <h6>Supreme Court Practice</h6>
+                    <p>National Representation</p>
+                </div>
+            </div>
+
+            <!-- High Court -->
+            <div class="col-md-3 col-6">
+                <div class="royal-badge">
+                    <div class="badge-icon">
+                        <i class="bi bi-award-fill"></i>
+                    </div>
+                    <h6>High Court Representation</h6>
+                    <p>State-Level Litigation</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+/* ===== ROYAL PREMIUM SECTION ===== */
+
+.royal-badge-section {
+    background: #ffffff;
+    border-top: 1px solid #f2f2f2;
+}
+
+.royal-heading {
+    color: #c6a14a;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.royal-badge {
+    background: #ffffff;
+    padding: 35px 20px;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    border: 1px solid #f1f1f1;
+    transition: 0.3s ease;
+}
+
+.royal-badge:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+    border-color: #c6a14a;
+}
+
+.badge-icon {
+    font-size: 34px;
+    color: #c6a14a;
+    margin-bottom: 15px;
+}
+
+.royal-badge h6 {
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 6px;
+}
+
+.royal-badge p {
+    font-size: 13px;
+    color: #000;
+    margin: 0;
+}
+</style>
+
+
+
+<!-- testimonials -->
+
+<section class="lux-testimonials">
+    <div class="container">
+
+        <div class="testimonial-heading">
+            <h2>What Our <span>Clients Say</span></h2>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        The firm handled my property dispute with professionalism 
+                        and strategic precision. Highly recommended for serious legal matters.
+                    </p>
+                    <div class="client-info">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
+                        <div>
+                            <div class="client-name">Rahul Mehta</div>
+                            <div class="client-role">Business Owner</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        Excellent drafting and documentation services. Clear communication 
+                        and complete confidentiality throughout the process.
+                    </p>
+                    <div class="client-info">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="">
+                        <div>
+                            <div class="client-name">Sneha Kapoor</div>
+                            <div class="client-role">Entrepreneur</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        Strong courtroom representation and practical legal advice. 
+                        The team truly prioritizes client success.
+                    </p>
+                    <div class="client-info">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="">
+                        <div>
+                            <div class="client-name">Amit Verma</div>
+                            <div class="client-role">Real Estate Consultant</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+<script>
+document.getElementById("whatsappForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    var name = document.getElementById("name").value;
+    var mobile = document.getElementById("mobile").value;
+    var issue = document.getElementById("issue").value;
+
+    var message = "New Consultation Request:%0A%0A"
+        + "Name: " + name + "%0A"
+        + "Mobile: " + mobile + "%0A"
+        + "Issue: " + issue;
+
+    var phoneNumber = "+919193969063"; // 👉 Replace with your WhatsApp number (with country code)
+
+    var whatsappURL = "https://wa.me/" + phoneNumber + "?text=" + message;
+
+    window.open(whatsappURL, "_blank");
+});
+</script>
+{% endblock %}

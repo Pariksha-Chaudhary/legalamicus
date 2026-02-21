@@ -1,0 +1,1036 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>LegalAmicus</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body {
+            background-color: #0d0d0d;
+            color: #ffffff;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* GOLD COLOR */
+        :root {
+            --gold: #d4af37;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background-color: #D4AF37;
+            border-bottom: 1px solid var(--gold);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--gold) !important;
+            font-size: 22px;
+        }
+
+        .nav-link {
+            color: black !important;
+            margin-left: 20px;
+        }
+
+        .nav-link:hover {
+            color: black !important;
+        }
+
+        /* HERO */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 8%;
+            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.9)),
+                url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f") center/cover no-repeat;
+        }
+
+        .hero h1 {
+            font-weight: 700;
+            font-size: 48px;
+        }
+
+        .gold-btn {
+            background-color: var(--gold);
+            color: black;
+            font-weight: 600;
+            border: none;
+        }
+
+        .gold-btn:hover {
+            background-color: #b8962e;
+            color: black;
+        }
+
+        /* CARDS */
+        .card {
+            background-color: #1a1a1a;
+            border: 1px solid var(--gold);
+            color: white;
+        }
+
+        .lawyer-card {
+            transition: 0.3s;
+        }
+
+        .lawyer-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .section-title {
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+
+        footer {
+            background-color: black;
+            border-top: 1px solid var(--gold);
+        }
+
+
+        .gold-btn {
+            background: linear-gradient(135deg, #D4AF37, #b8962e);
+
+            border: none;
+            color: black;
+            font-weight: 600;
+        }
+
+        .gold-btn:hover {
+            background: linear-gradient(135deg, #e6c14c, #c9a52e);
+        }
+
+
+        /* ===== MULTI LEVEL DROPDOWN FIX ===== */
+
+        .dropdown-submenu {
+            position: relative;
+        }
+
+        .dropdown-submenu>.dropdown-menu {
+            top: 0;
+            left: 100%;
+            margin-top: -1px;
+
+            background-color: white;
+            border: 1px solid var(--gold);
+        }
+
+        /* Show submenu on hover
+.dropdown-submenu >:hover .dropdown-menu {
+    display: block;
+}
+
+/* Optional gold hover effect */
+        /* .dropdown-menu .dropdown-item:hover {
+    background-color: var(--gold);
+    color: black;
+}  */
+
+        /* RESPONSIVE */
+        @media(max-width:768px) {
+            .hero h1 {
+                font-size: 20px;
+            }
+
+            .gold-btn {
+                font-size: small;
+            }
+
+        }
+
+        .lux-docs {
+            background: white;
+            padding: 90px 0;
+        }
+
+        /* LEFT SIDE */
+        .doc-left h2 {
+            color: #C6A13A;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .doc-left p {
+            color: grey;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* RIGHT SIDE CARDS */
+        .doc-card {
+            background: #111;
+            border: 1px solid #C6A13A;
+            padding: 20px;
+            transition: 0.3s ease;
+            height: 100%;
+        }
+
+        .doc-card h6 {
+            color: #C6A13A;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .doc-card p {
+            color: #aaa;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .doc-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(198, 161, 58, 0.3);
+        }
+
+        .doc-btn {
+            border: 1px solid #C6A13A;
+            color: #C6A13A;
+            background: transparent;
+            padding: 5px 12px;
+            font-size: 12px;
+            transition: 0.3s;
+        }
+
+        .doc-btn:hover {
+            background: #C6A13A;
+            color: black;
+        }
+
+
+        /* SECTION */
+        .section {
+            padding: 100px 8%;
+            text-align: center;
+        }
+
+        .section h2 {
+            color: #D4AF37;
+            font-size: 40px;
+            margin-bottom: 40px;
+        }
+
+        .section p {
+            max-width: 800px;
+            margin: auto;
+            color: var(--text-gray);
+        }
+
+        @media(max-width:768px) {
+            .section h2 {
+                font-size: 20px;
+                margin-top: 1%;
+                margin-bottom: 10px;
+            }
+
+            .section p {
+                font-size: 15px;
+                margin-bottom: 1px;
+            }
+
+            .prestige div {
+                color: var(--gold);
+                font-weight: 200;
+            }
+
+        }
+
+        .lux-why {
+            background: #0d0d0d;
+            padding: 110px 0;
+            position: relative;
+        }
+
+        /* LEFT SIDE */
+        .why-left h2 {
+            color: #C6A13A;
+            font-weight: 700;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+
+        .why-left p {
+            color: #b5b5b5;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        /* GOLD DIVIDER */
+        .gold-divider-vertical {
+            position: absolute;
+            top: 15%;
+            bottom: 15%;
+            left: 41%;
+            width: 1px;
+            background: #C6A13A;
+        }
+
+        /* RIGHT SIDE */
+        .why-item {
+            display: flex;
+            margin-bottom: 35px;
+        }
+
+        .why-icon {
+            width: 55px;
+            height: 55px;
+            border: 1px solid #C6A13A;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 18px;
+            font-size: 22px;
+            color: #C6A13A;
+        }
+
+        .why-text h6 {
+            color: #C6A13A;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .why-text p {
+            color: #aaa;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .lux-testimonials {
+            background: #ffffff;
+            padding: 100px 0;
+        }
+
+        .testimonial-heading {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .testimonial-heading h2 {
+            color: #111;
+            font-weight: 700;
+        }
+
+        .testimonial-heading span {
+            color: #C6A13A;
+        }
+
+        .testimonial-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            transition: 0.3s ease;
+            height: 100%;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .testimonial-text {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .client-info img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 2px solid #C6A13A;
+        }
+
+        .client-name {
+            font-weight: 600;
+            color: #111;
+        }
+
+        .client-role {
+            font-size: 13px;
+            color: #777;
+        }
+
+        .stars {
+            color: #C6A13A;
+            margin-bottom: 15px;
+        }
+
+        /* cta section */
+        .lux-cta {
+            background: whitesmoke;
+            padding: 120px 0;
+        }
+
+        .cta-form {
+            background: #111;
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(198, 161, 58, 0.4);
+        }
+
+        .cta-form h4 {
+            color: #C6A13A;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .cta-form input,
+        .cta-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            color: white;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .cta-form input:focus,
+        .cta-form textarea:focus {
+            border-color: #C6A13A;
+            outline: none;
+        }
+
+        .cta-form button {
+            width: 100%;
+            padding: 13px;
+            background: #C6A13A;
+            border: none;
+            font-weight: 600;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+
+        .cta-form button:hover {
+            background: #fff;
+        }
+
+        /* RIGHT SIDE TEXT */
+        .cta-text {
+            color: black;
+            padding-left: 60px;
+        }
+
+        .cta-text h2 {
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .cta-text span {
+            color: #C6A13A;
+        }
+
+        .cta-text p {
+            color: grey;
+            font: bold;
+            line-height: 1.8;
+        }
+
+        /* footer */
+        .lux-footer {
+            background: black;
+            color: #bbb;
+            padding: 90px 0 30px 0;
+            font-size: 14px;
+        }
+
+        .footer-logo img {
+            max-width: 100px;
+            margin-bottom: 20px;
+        }
+
+        .footer-title {
+            color: #C6A13A;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-contact p {
+            margin-bottom: 8px;
+            color: #aaa;
+        }
+
+        .footer-links a {
+            display: block;
+            color: #aaa;
+            text-decoration: none;
+            margin-bottom: 8px;
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #C6A13A;
+            padding-left: 5px;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            margin-right: 12px;
+            border-radius: 50%;
+            background: transparent;
+            border: 1px solid #C6A13A;
+            color: #C6A13A;
+            font-size: 16px;
+            transition: 0.4s ease;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            background: #C6A13A;
+            color: #000;
+            transform: translateY(-4px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #222;
+            margin-top: 50px;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 13px;
+            color: #777;
+        }
+
+        /* faqs */
+        .lux-faq {
+            background: #ffffff;
+            padding: 110px 0;
+        }
+
+        .faq-heading {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .faq-heading h2 {
+            font-weight: 700;
+            color: #111;
+        }
+
+        .faq-heading span {
+            color: #C6A13A;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            cursor: pointer;
+            font-weight: 600;
+            color: #111;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            color: #C6A13A;
+        }
+
+        .faq-answer {
+            display: none;
+            padding-top: 10px;
+            color: #666;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .faq-icon {
+            font-size: 18px;
+            color: #C6A13A;
+            transition: 0.3s;
+        }
+
+        /* Centered Mega Menu */
+        .mega-menu {
+            margin-left: 200px;
+            left: 50% !important;
+            transform: translateX(-50%);
+            width: 900px;
+            max-width: 95vw;
+            border-radius: 12px;
+        }
+
+
+        /* Remove default bootstrap full width */
+        .dropdown.position-static {
+            position: relative !important;
+        }
+
+        /* Dropdown item hover */
+        .mega-menu .dropdown-item:hover {
+            color: var(--gold);
+            background-color: rgba(212, 175, 55, 0.08);
+        }
+
+        .mega-menu h6:hover {
+            color: var(--gold);
+        }
+        /* Mobile Responsive */
+        @media (max-width: 500px) {
+            .mega-menu {
+                width: 100%;
+                transform: none;
+                margin-left: 0cm;
+                max-height: 80vh;
+                /* Important */
+                overflow-y: auto;
+                /* Enables scroll */ 
+                overscroll-behavior: contain; 
+                -webkit-overflow-scrolling: touch;
+                /* Smooth iOS scroll */
+            }
+
+            .mega-menu .row {
+                display: block;
+            }
+
+            .mega-menu .col-md-4 {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+
+        }
+
+
+        .offcanvas {
+            background-color: var(--gold);
+            color: white;
+        }
+
+        .nav-link {
+            color: #fff;
+        }
+
+        .offcanvas .nav-link {
+            color: #ddd;
+        }
+
+        .offcanvas .nav-link:hover {
+            color: #d4af37;
+            /* golden hover */
+        }
+
+        @media (min-width: 200px) {
+            #mobileMenu {
+                width: 250px;
+            }
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="/">
+                <img src="{% static 'images/cropped_circle_image.png' %}" alt="Legal Amicus Logo" style="height:55px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Offcanvas Menu -->
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                </div>
+
+                <div class="offcanvas-body" id="navmenu">
+                    <ul class="navbar-nav ms-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item dropdown position-static">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                                Practice Areas
+                            </a>
+
+                            <div class="dropdown-menu mega-menu shadow border-0">
+                                <div class="container">
+                                    <div class="row p-4">
+
+                                        <div class="col-md-4">
+                                            <h6 class="fw-bold">⚖ Civil Law</h6>
+                                            <a class="dropdown-item" href="{% url 'practice:civil_law' %}">Property
+                                                Disputes</a>
+                                            <a class="dropdown-item" href="{% url 'practice:civil_law' %}">Partition
+                                                Suits</a>
+                                            <a class="dropdown-item" href="{% url 'practice:civil_law' %}">Recovery
+                                                Suits</a>
+                                            <a class="dropdown-item" href="{% url 'practice:civil_law' %}">Specific
+                                                Performance</a>
+                                            <a class="dropdown-item" href="{% url 'practice:civil_law' %}">Injunction
+                                                Matters</a>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <h6 class="fw-bold">⚖ Criminal Law</h6>
+                                            <a class="dropdown-item" href="{% url 'practice:criminal_law' %}">Bail</a>
+                                            <a class="dropdown-item" href="{% url 'practice:criminal_law' %}">FIR
+                                                Quashing</a>
+                                            <a class="dropdown-item" href="{% url 'practice:criminal_law' %}">Cheque
+                                                Bounce</a>
+                                            <a class="dropdown-item" href="{% url 'practice:criminal_law' %}">Cyber
+                                                Crime</a>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <h6 class="fw-bold">⚖ Family Law</h6>
+                                            <a class="dropdown-item" href="{% url 'practice:family_law' %}">Divorce</a>
+                                            <a class="dropdown-item" href="{% url 'practice:family_law' %}">Child
+                                                Custody</a>
+                                            <a class="dropdown-item"
+                                                href="{% url 'practice:family_law' %}">Maintenance</a>
+                                        </div>
+
+                                        <div class="col-lg-3 col-md-6">
+                                            <h6 class="fw-bold">Corporate & Business Law</h6>
+                                            <a class="dropdown-item" href="{% url 'practice:corporate_law' %}">Company
+                                                Formation</a>
+                                            <a class="dropdown-item" href="{% url 'practice:corporate_law' %}">Contracts
+                                                & Agreements</a>
+                                            <a class="dropdown-item" href="{% url 'practice:corporate_law' %}">Mergers &
+                                                Acquisitions</a>
+                                            <a class="dropdown-item"
+                                                href="{% url 'practice:corporate_law' %}">Compliance Advisory</a>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6">
+                                            <h6 class="fw-bold">Property & Real Estate Law</h6>
+
+                                            <a class="dropdown-item" href="{% url 'practice:property_law' %}">
+                                                Sale Deed Drafting
+                                            </a>
+
+                                            <a class="dropdown-item" href="#">
+                                                Property Verification
+                                            </a>
+
+                                            <a class="dropdown-item" href="{% url 'practice:property_law' %}">
+                                                Land Disputes
+                                            </a>
+
+                                            <a class="dropdown-item" href="{% url 'practice:property_law' %}">
+                                                Builder–Buyer Disputes
+                                            </a>
+
+                                            <a class="dropdown-item" href="{% url 'practice:property_law' %}">
+                                                Lease Agreements
+                                            </a>
+
+                                            <a class="dropdown-item" href="{% url 'practice:property_law' %}">
+                                                Title Search
+                                            </a>
+                                        </div>
+
+
+
+                                        <div class="col-lg-3 col-md-6">
+                                            <h6 class="fw-bold">Taxation & Employment</h6>
+                                            <a class="dropdown-item" href="{% url 'practice:taxation_gst' %}">GST
+                                                Matters</a>
+                                            <a class="dropdown-item" href="{% url 'practice:taxation_gst' %}">Income Tax
+                                                Litigation</a>
+                                            <a class="dropdown-item" href="{% url 'practice:taxation_gst' %}">Wrongful
+                                                Termination</a>
+                                            <a class="dropdown-item" href="{% url 'practice:taxation_gst' %}">Labour Law
+                                                Compliance</a>
+                                        </div>
+
+                                        <div class="col-lg-3 col-md-6">
+                                            <h6 class="fw-bold">Services & Employment Law</h6>
+
+                                            <a class="dropdown-item" href="{% url 'practice:services_employment' %}">
+                                                Wrongful Termination
+                                            </a>
+
+                                            <a class="dropdown-item" href="{% url 'practice:services_employment' %}">
+                                                Labour Disputes
+                                            </a>
+
+                                            <a class="dropdown-item" href="{% url 'practice:services_employment' %}">
+                                                Employment Contracts
+                                            </a>
+
+                                            <a class="dropdown-item" href="{% url 'practice:services_employment' %}">
+                                                Industrial Disputes
+                                            </a>
+
+                                            <a class="dropdown-item" href="{% url 'practice:services_employment' %}">
+                                                Service Matters
+                                            </a>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'practice:documentation' %}">Documentation & Drafting</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/lawyers/">Find Lawyers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/casestudy/">Case Studies</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about/">About Us</a>
+                        </li>
+
+                        {% if user.is_authenticated %}
+
+                        {% if user.is_staff %}
+                        <!-- ADMIN -->
+                        <li class="nav-item">
+                            <a class="nav-link text-danger" href="{% url 'admin_revenue' %}">
+                                Admin Revenue
+                            </a>
+                        </li>
+
+                        {% elif is_lawyer %}
+                        <!-- LAWYER -->
+                        <li class="nav-item">
+                            <a class="nav-link text-warning" href="{% url 'lawyer_dashboard' %}">
+                                Lawyer Dashboard
+                            </a>
+                        </li>
+
+                        {% else %}
+                        <!-- NORMAL USER -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'my_consultations' %}">
+                                My Consultations
+                            </a>
+                        </li>
+                        {% endif %}
+
+                        <li class="nav-item">
+                            <span class="nav-link text-warning">
+                                Welcome, {{ user.username }}
+                            </span>
+                        </li>
+
+                        <li class="nav-item">
+                            <form method="POST" action="{% url 'logout' %}">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-sm btn-outline-light">
+                                    Logout
+                                </button>
+                            </form>
+                            
+                        </li>
+
+                        {% else %}
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login' %}">Login</a>
+                        </li>
+
+                        <li class="nav-item ms-2">
+                            <a class="btn gold-btn" href="{% url 'register' %}">
+                                Register
+                            </a>
+                        </li>
+
+                        {% endif %}
+
+                    </ul>
+                </div>
+            </div>
+    </nav>
+
+    {% block content %}{% endblock %}
+
+
+
+    <footer class="lux-footer">
+        <div class="container">
+            <div class="row">
+
+                <!-- LEFT SIDE -->
+                <div class="col-lg-4">
+
+                    <div class="footer-logo">
+                        <!-- Replace with your logo -->
+                        <img src="{% static 'images/cropped_circle_image.png' %}" alt="Logo">
+                    </div>
+
+                    <div class="footer-contact">
+                        <p><strong>Address:</strong><br>
+                            2/256 Sector-8, Chandigarh
+                        </p>
+
+                        <p><strong>Email:</strong><br>
+                            aniketnagar122@gmail.com
+                        </p>
+
+                        <p><strong>Phone:</strong><br>
+                            +91 9928797455
+                        </p>
+                    </div>
+
+                    <div class="social-icons">
+
+                        <!-- WhatsApp -->
+                        <a href="https://wa.me/919928797455" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+
+                        <!-- Facebook -->
+                        <a href="https://facebook.com/yourpage" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+
+                        <!-- Twitter / X -->
+                        <a href="https://twitter.com/yourprofile" target="_blank">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+
+                        <!-- Instagram -->
+                        <a href="https://instagram.com/yourprofile" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+                        <!-- Email -->
+                        <a href="mailto:aniketnagar122@gmail.com">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT SIDE COLUMN 1 -->
+                <div class="col-lg-2">
+                    <h5 class="footer-title">Quick Links</h5>
+                    <div class="footer-links">
+                        <a href="#">Home</a>
+                        <a href="/about/">About Us</a>
+                        <a href="{% url 'practice_areas' %}">Practice Areas</a>
+                        <a href="{% url 'practice:documentation' %}">Documentation</a>
+                        <a href="{% url 'consultation' %}">Contact</a>
+                        <a href="{% url 'term_conditions' %}">Terms & Conditions</a>
+                        <a href="{% url 'faq' %}">FAQs</a>
+
+                    </div>
+                </div>
+
+
+                <!-- RIGHT SIDE COLUMN 2 -->
+                <div class="col-lg-3">
+                    <h5 class="footer-title">Practice Areas</h5>
+                    <div class="footer-links">
+                        <a href="{% url 'practice:civil_law' %}">Civil Litigation</a>
+                        <a href="{% url 'practice:criminal_law' %}">Criminal Law</a>
+                        <a href="{% url 'practice:property_law' %}">Property Disputes</a>
+                        <a href="{% url 'practice:corporate_law' %}">Corporate Advisory</a>
+                        <a href="{% url 'practice:documentation' %}">Legal Documentation</a>
+                    </div>
+                </div>
+
+
+                <!-- RIGHT SIDE COLUMN 3 -->
+                <div class="col-lg-3">
+                    <h5 class="footer-title">Schedule Consultation</h5>
+                    <p>Book a confidential legal consultation with our experts.</p>
+                    <a href="{% url 'consultation' %}"
+                        style="display:inline-block;padding:10px 25px;background:#C6A13A;color:#000;text-decoration:none;border-radius:30px;font-weight:600;">
+                        Book Now
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                © 2025 Your Law Firm. All Rights Reserved.
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            document.querySelectorAll(".sub-menu-toggle").forEach(function (element) {
+                element.addEventListener("click", function (e) {
+
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    let nextEl = this.nextElementSibling;
+
+                    if (nextEl && nextEl.classList.contains("dropdown-menu")) {
+                        nextEl.classList.toggle("show");
+                    }
+                });
+            });
+
+        });
+
+
+
+        document.querySelectorAll(".faq-question").forEach(item => {
+            item.addEventListener("click", () => {
+                const answer = item.nextElementSibling;
+                const icon = item.querySelector(".faq-icon");
+
+                if (answer.style.display === "block") {
+                    answer.style.display = "none";
+                    icon.textContent = "+";
+                } else {
+                    document.querySelectorAll(".faq-answer").forEach(a => a.style.display = "none");
+                    document.querySelectorAll(".faq-icon").forEach(i => i.textContent = "+");
+
+                    answer.style.display = "block";
+                    icon.textContent = "−";
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>

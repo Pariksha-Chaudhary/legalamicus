@@ -1,0 +1,357 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+/* ===== Elegant White & Gold Theme ===== */
+body {
+    background: #ffffff;
+}
+
+.main-heading {
+    color: #c6a14a;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.sub-text {
+    color: #000;
+    font-size: 15px;
+}
+
+.service-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    transition: all 0.3s ease;
+    height: 100%;
+    border: 1px solid #f1f1f1;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+.service-card h5 {
+    color: #c6a14a;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.service-card p {
+    color: #000;
+    font-size: 14px;
+}
+
+.service-card ul {
+    padding-left: 18px;
+    font-size: 13px;
+    color: #000;
+}
+
+.consult-box {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 35px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border-top: 4px solid #c6a14a;
+}
+
+.consult-box h4 {
+    color: #c6a14a;
+    font-weight: 700;
+}
+
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.form-control:focus {
+    border-color: #c6a14a;
+    box-shadow: 0 0 0 0.1rem rgba(198,161,74,0.2);
+}
+
+.gold-btn {
+    background: #c6a14a;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.gold-btn:hover {
+    background: #b89335;
+    transform: translateY(-2px);
+}
+.urgency-box {
+    background: #ffffff;
+    padding: 50px 30px;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    border: 1px solid #f2f2f2;
+}
+
+.urgency-box h3 {
+    color: #c6a14a;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.urgency-box p {
+    color: #000;
+    max-width: 650px;
+    margin: auto;
+    font-size: 15px;
+}
+
+.urgency-call {
+    background: #000;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.urgency-call:hover {
+    background: #333;
+    color: #fff;
+}
+
+.urgency-whatsapp {
+    background: #c6a14a;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.urgency-whatsapp:hover {
+    background: #b89335;
+    color: #fff;
+}
+</style>
+
+<section class="container py-5">
+
+<!-- PAGE TITLE -->
+<div class="text-center mb-5">
+    <h2 class="main-heading">
+        Documentation & Drafting Services
+    </h2>
+    <p class="sub-text mt-3">
+        Professional legal drafting ensuring compliance, clarity, and enforceability.
+    </p>
+</div>
+
+<div class="row">
+
+<!-- LEFT SIDE – SERVICES -->
+<div class="col-lg-7">
+<div class="row g-4">
+
+<!-- Legal Notices -->
+<div class="col-md-6">
+<div class="service-card">
+<h5>Legal Notices</h5>
+<p>Drafting notices for recovery, breach of contract, cheque bounce and disputes.</p>
+<ul>
+<li>Code of Civil Procedure, 1908</li>
+<li>Indian Contract Act, 1872</li>
+<li>Negotiable Instruments Act, 1881</li>
+</ul>
+</div>
+</div>
+
+<!-- Affidavits -->
+<div class="col-md-6">
+<div class="service-card">
+<h5>Affidavits</h5>
+<p>Sworn affidavits for court proceedings, declarations and compliance matters.</p>
+<ul>
+<li>Indian Evidence Act, 1872</li>
+<li>Notaries Act, 1952</li>
+<li>Oaths Act, 1969</li>
+</ul>
+</div>
+</div>
+
+<!-- Agreements -->
+<div class="col-md-6">
+<div class="service-card">
+<h5>Agreements</h5>
+<p>Employment contracts, rental agreements, partnership deeds and NDAs.</p>
+<ul>
+<li>Indian Contract Act, 1872</li>
+<li>Registration Act, 1908</li>
+<li>Specific Relief Act, 1963</li>
+</ul>
+</div>
+</div>
+
+<!-- Sale Deed -->
+<div class="col-md-6">
+<div class="service-card">
+<h5>Sale Deed</h5>
+<p>Legally compliant drafting and registration of property sale deeds.</p>
+<ul>
+<li>Transfer of Property Act, 1882</li>
+<li>Registration Act, 1908</li>
+<li>Indian Stamp Act, 1899</li>
+</ul>
+</div>
+</div>
+
+<!-- Will Drafting -->
+<div class="col-md-6">
+<div class="service-card">
+<h5>Will Drafting</h5>
+<p>Preparation of legally enforceable wills for smooth succession planning.</p>
+<ul>
+<li>Indian Succession Act, 1925</li>
+<li>Hindu Succession Act, 1956</li>
+</ul>
+</div>
+</div>
+
+<!-- Power of Attorney -->
+<div class="col-md-6">
+<div class="service-card">
+<h5>Power of Attorney</h5>
+<p>General & Special POA for property, banking and representation matters.</p>
+<ul>
+<li>Power of Attorney Act, 1882</li>
+<li>Registration Act, 1908</li>
+<li>Indian Stamp Act, 1899</li>
+</ul>
+</div>
+</div>
+
+<!-- Gift Deed -->
+<div class="col-md-6">
+<div class="service-card">
+<h5>Gift Deed</h5>
+<p>Drafting gift deeds for immovable & movable property transfers.</p>
+<ul>
+<li>Transfer of Property Act, 1882</li>
+<li>Registration Act, 1908</li>
+<li>Indian Stamp Act, 1899</li>
+</ul>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- RIGHT SIDE – CONSULTATION FORM -->
+<div class="col-lg-5">
+
+<div class="consult-box">
+
+<h4 class="text-center mb-4">
+Request Drafting Consultation
+</h4>
+
+<form onsubmit="sendToWhatsApp(); return false;">
+
+<input type="text" id="name" class="form-control mb-3" placeholder="Full Name" required>
+<input type="email" id="email" class="form-control mb-3" placeholder="Email Address" required>
+<input type="text" id="phone" class="form-control mb-3" placeholder="Phone Number" required>
+<input type="text" id="city" class="form-control mb-3" placeholder="City" required>
+<input type="text" id="state" class="form-control mb-3" placeholder="State" required>
+
+<select id="service" class="form-control mb-3" required>
+<option value="">Select Drafting Service</option>
+<option>Legal Notice</option>
+<option>Affidavit</option>
+<option>Agreement Drafting</option>
+<option>Sale Deed</option>
+<option>Will Drafting</option>
+<option>Power of Attorney</option>
+<option>Gift Deed</option>
+</select>
+
+<textarea id="message" rows="4" class="form-control mb-3"
+placeholder="Describe Your Requirement" required></textarea>
+
+<button type="submit" class="gold-btn w-100">
+Submit Request
+</button>
+
+</form>
+<!-- URGENCY BOX -->
+<section class="py-5" style="background:#ffffff;">
+    <div class="container">
+
+        <div class="urgency-box text-center">
+
+            <h3 class="mb-3">
+                Need Urgent Document Drafting?
+            </h3>
+
+            <p class="mb-4">
+                Delays in legal documentation can cause financial loss or legal complications.
+                Get your documents professionally drafted and reviewed without delay.
+            </p>
+
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                
+                <!-- Call Button -->
+                <a href="tel:+919928797455" class="btn urgency-call">
+                    Call Now
+                </a>
+
+                <!-- WhatsApp Button -->
+                <a href="https://wa.me/919928797455?text=I need urgent legal drafting assistance."
+                   target="_blank"
+                   class="btn urgency-whatsapp">
+                    WhatsApp Now
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- WHATSAPP SCRIPT -->
+<script>
+function sendToWhatsApp() {
+
+var name = document.getElementById("name").value;
+var email = document.getElementById("email").value;
+var phone = document.getElementById("phone").value;
+var city = document.getElementById("city").value;
+var state = document.getElementById("state").value;
+var service = document.getElementById("service").value;
+var message = document.getElementById("message").value;
+
+var whatsappMessage =
+"New Drafting Consultation Request:%0A%0A" +
+"Name: " + name + "%0A" +
+"Email: " + email + "%0A" +
+"Phone: " + phone + "%0A" +
+"City: " + city + "%0A" +
+"State: " + state + "%0A" +
+"Service: " + service + "%0A" +
+"Details: " + message;
+
+var whatsappURL = "https://wa.me/919928797455?text=" + whatsappMessage;
+
+window.open(whatsappURL, "_blank");
+}
+</script>
+
+{% endblock %}

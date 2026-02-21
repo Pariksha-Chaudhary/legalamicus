@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="detail-page">
+    <h1>{{ sub.name }}</h1>
+    <p>{{ sub.description }}</p>
+
+    {% if sub.acts %}
+        <h3>Relevant Acts</h3>
+        <p>{{ sub.acts }}</p>
+    {% endif %}
+</div>
+
+<div class="cta-box">
+    <h3>Request Legal Consultation</h3>
+    <p>We will get back to you soon.</p>
+    <a href="{% url 'consultation' %}" class="btn btn-warning">
+        Request Consultation
+    </a>
+</div>
+
+{% endblock %}

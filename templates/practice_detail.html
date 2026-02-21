@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+.detail-page {
+    background: #ffffff;
+    padding: 120px 8% 80px;
+    font-family: 'Montserrat', sans-serif;
+    color: #000;
+}
+
+.detail-header h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    color: #b8860b;
+    font-weight: 700;
+}
+
+.detail-header p {
+    color: #444;
+    margin-bottom: 40px;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.section-title {
+    font-size: 22px;
+    margin: 40px 0 15px;
+    color: #b8860b;
+    font-weight: 600;
+}
+
+.detail-list {
+    padding-left: 20px;
+}
+
+.detail-list li {
+    margin-bottom: 10px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* CTA FORM */
+.cta-section {
+    margin-top: 70px;
+    padding: 50px;
+    background: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 6px;
+}
+
+.cta-section h3 {
+    margin-bottom: 15px;
+    color: #b8860b;
+    font-weight: 600;
+}
+
+.cta-section p {
+    margin-bottom: 25px;
+    color: #555;
+}
+
+.cta-section input,
+.cta-section textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.cta-section input:focus,
+.cta-section textarea:focus {
+    outline: none;
+    border-color: #b8860b;
+}
+
+.cta-section button {
+    background: #b8860b;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.cta-section button:hover {
+    background: #9c7309;
+}
+</style>
+
+<div class="detail-page">
+
+    <div class="detail-header">
+        <h1>{{ data.title }}</h1>
+        <p>{{ data.description }}</p>
+    </div>
+
+    <h3 class="section-title">Applicable Laws</h3>
+    <ul class="detail-list">
+        {% for act in data.acts %}
+            <li>{{ act }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3 class="section-title">Services Offered</h3>
+    <ul class="detail-list">
+        {% for service in data.services %}
+            <li>{{ service }}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- CTA FORM -->
+    <div class="cta-section">
+        <h3>Request Legal Consultation</h3>
+        <p>Our legal team will respond promptly and confidentially.</p>
+
+        <form onsubmit="redirectToWhatsApp(); return false;">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="text" id="mobile" placeholder="Mobile Number" required>
+            <input type="email" id="email" placeholder="Email Address" required>
+            <textarea id="issue" rows="4" placeholder="Describe your issue..." required></textarea>
+            <button type="submit">Send on WhatsApp</button>
+        </form>
+    </div>
+
+</div>
+
+<script>
+function redirectToWhatsApp() {
+    var name = document.getElementById("name").value;
+    var mobile = document.getElementById("mobile").value;
+    var email = document.getElementById("email").value;
+    var issue = document.getElementById("issue").value;
+
+    var message = `New Consultation Request:
+Name: ${name}
+Mobile: ${mobile}
+Email: ${email}
+Issue: ${issue}`;
+
+    var phoneNumber = "919928797455";  
+    var url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
+
+    window.open(url, "_blank");
+}
+</script>
+
+{% endblock %}

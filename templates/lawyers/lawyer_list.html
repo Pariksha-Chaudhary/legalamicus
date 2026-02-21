@@ -1,0 +1,238 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<style>
+:root{
+    --gold:#C6A74E;
+    --black:#111111;
+    --white:#ffffff;
+}
+
+.section-title{
+    font-family:'Playfair Display', serif;
+    font-weight:600;
+    margin-bottom:40px;
+}
+
+/* Filter Card */
+.card{
+    border:1px solid var(--gold);
+    background:var(--black);
+    color:white;
+    border-radius:12px;
+}
+
+/* Gold Button */
+.gold-btn{
+    background:var(--gold);
+    color:black;
+    font-weight:600;
+    border:none;
+    transition:0.3s ease;
+}
+
+.gold-btn:hover{
+    background:white;
+    color:black;
+}
+
+/* Lawyer Card */
+.lawyer-card{
+    background:var(--black);
+    color:white;
+    border:1px solid var(--gold);
+    border-radius:15px;
+    transition:0.4s ease;
+    height:100%;
+}
+
+.lawyer-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* Profile Image */
+.profile-img{
+    width:120px;
+    height:120px;
+    object-fit:cover;
+    border-radius:50%;
+    border:3px solid var(--gold);
+}
+
+/* Bio text */
+.bio-text{
+    font-size:14px;
+    color:#ccc;
+    min-height:60px;
+}
+</style>
+
+
+<div class="container mt-5">
+
+    <h2 class="section-title text-center text-warning">Find Your Lawyer</h2>
+
+ <!-- FILTER SECTION -->
+<div class="card p-4 mb-5">
+    <form method="GET" class="row g-3">
+
+        <!-- STATE -->
+        <div class="col-md-3">
+            <select id="state" name="state" class="form-select bg-dark text-white border-warning">
+                <option value="">State</option>
+                {% for state in states %}
+                <option value="{{ state.id }}">{{ state.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- CITY -->
+        <div class="col-md-3">
+            <select id="city" name="city" class="form-select bg-dark text-white border-warning">
+                <option value="">City</option>
+                {% for city in cities %}
+                <option value="{{ city.id }}">{{ city.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- CATEGORY -->
+        <div class="col-md-3">
+            <select id="category" name="category" class="form-select bg-dark text-white border-warning">
+                <option value="">Category</option>
+                {% for cat in categories %}
+                <option value="{{ cat.id }}">{{ cat.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- SUB CATEGORY -->
+        <div class="col-md-3">
+            <select id="sub_category" name="sub_category" class="form-select bg-dark text-white border-warning">
+                <option value="">Sub Category</option>
+                {% for sub in sub_categories %}
+                <option value="{{ sub.id }}">{{ sub.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="col-12">
+            <button type="submit" class="btn gold-btn w-100 mt-3">
+                Search Lawyers
+            </button>
+        </div>
+
+    </form>
+</div>
+
+    <!-- LAWYER CARDS -->
+    <div class="row">
+        {% for lawyer in lawyers %}
+        <div class="col-md-4 mb-4">
+            <div class="lawyer-card p-4 text-center">
+
+                <!-- Profile Image -->
+                {% if lawyer.profile_image %}
+                    <img src="{{ lawyer.profile_image.url }}"
+                         class="profile-img mb-3"
+                         alt="{{ lawyer.user.username }}">
+                {% else %}
+                    <img src="{% static 'images/default-lawyer.jpg' %}"
+                         class="profile-img mb-3"
+                         alt="Default">
+                {% endif %}
+
+                <!-- Name -->
+                <h5 class="text-warning">
+                    {{ lawyer.user.get_full_name|default:lawyer.user.username }}
+                </h5>
+
+                <!-- Location & Category -->
+                <p class="text-secondary mb-1">
+                    {{ lawyer.city }} | {{ lawyer.category }}
+                </p>
+
+                <!-- Experience -->
+                <p class="mb-2">
+                    Experience: {{ lawyer.experience }} years
+                </p>
+
+                <!-- Bio -->
+                <p class="bio-text">
+                    {{ lawyer.bio|truncatewords:20 }}
+                </p>
+
+                <!-- Fee -->
+                {% if lawyer.is_free_consultation %}
+                    <h6 class="fw-bold text-success">
+                        Consultation Fee: FREE
+                    </h6>
+                {% else %}
+                    <h6 class="fw-bold text-warning">
+                        Consultation Fee: ₹{{ lawyer.fee }}
+                    </h6>
+                {% endif %}
+
+                <!-- Button -->
+                <a href="/book/{{ lawyer.id }}/" class="btn gold-btn mt-3 w-100">
+                    Pay & Connect
+                </a>
+
+            </div>
+        </div>
+        {% empty %}
+        <div class="text-center mt-5">
+            <p class="text-secondary">No lawyers found.</p>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+<script>
+
+// STATE → CITY
+document.getElementById("state").addEventListener("change", function() {
+    var stateId = this.value;
+
+    fetch("{% url 'ajax_load_cities' %}?state_id=" + stateId)
+        .then(response => response.json())
+        .then(data => {
+            var citySelect = document.getElementById("city");
+            citySelect.innerHTML = '<option value="">City</option>';
+
+            data.forEach(function(city) {
+                var option = document.createElement("option");
+                option.value = city.id;
+                option.text = city.name;
+                citySelect.appendChild(option);
+            });
+        });
+});
+
+
+// CATEGORY → SUBCATEGORY
+document.getElementById("category").addEventListener("change", function() {
+    var categoryId = this.value;
+
+    fetch("{% url 'ajax_load_subcategories' %}?category_id=" + categoryId)
+        .then(response => response.json())
+        .then(data => {
+            var subSelect = document.getElementById("sub_category");
+            subSelect.innerHTML = '<option value="">Sub Category</option>';
+
+            data.forEach(function(sub) {
+                var option = document.createElement("option");
+                option.value = sub.id;
+                option.text = sub.name;
+                subSelect.appendChild(option);
+            });
+        });
+});
+
+</script>
+
+{% endblock %}

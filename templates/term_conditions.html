@@ -1,0 +1,234 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+:root{
+    --gold:#C6A74E;
+    --black:#111111;
+    --white:#ffffff;
+    --light:#f6f6f6;
+}
+
+body{
+    background:var(--white);
+    font-family:'Poppins',sans-serif;
+    color:var(--black);
+}
+
+/* Hero */
+.terms-hero{
+    background:var(--black);
+    color:white;
+    padding:100px 20px;
+    text-align:center;
+}
+
+.terms-hero h1{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(30px,5vw,48px);
+}
+
+.terms-hero span{
+    color:var(--gold);
+}
+
+/* Content */
+.terms-wrapper{
+    padding:90px 20px;
+}
+
+.container-custom{
+    max-width:1050px;
+    margin:auto;
+}
+
+.terms-section{
+    margin-bottom:70px;
+}
+
+.terms-section h3{
+    font-family:'Playfair Display',serif;
+    margin-bottom:20px;
+    padding-bottom:8px;
+    border-bottom:2px solid var(--gold);
+}
+
+.terms-section p{
+    line-height:1.9;
+    color:#444;
+    margin-bottom:18px;
+}
+
+/* Payment Highlight */
+.payment-box{
+    background:var(--light);
+    padding:25px;
+    border-left:4px solid var(--gold);
+    border-radius:6px;
+    margin-top:20px;
+}
+
+@media(max-width:768px){
+    .terms-wrapper{
+        padding:60px 15px;
+    }
+}
+</style>
+
+<!-- HERO -->
+<section class="terms-hero">
+    <h1>Terms & <span>Conditions</span></h1>
+</section>
+
+<!-- CONTENT -->
+<section class="terms-wrapper">
+<div class="container-custom">
+
+    <div class="terms-section">
+        <h3>Introduction</h3>
+        <p>
+            These Terms and Conditions govern your access to and use of the LegalAmicus website,
+            including all information, consultation facilities, and online payment features made available.
+            By continuing to browse or interact with this website, you acknowledge that you accept
+            these terms in their entirety.
+        </p>
+        <p>
+            LegalAmicus reserves the right to restrict or terminate access to any user who fails
+            to comply with these conditions. Continued use of this platform signifies
+            your agreement to abide by the policies outlined herein.
+        </p>
+    </div>
+
+    <div class="terms-section">
+        <h3>No Attorney–Client Relationship</h3>
+        <p>
+            Accessing this website, submitting inquiries, or communicating electronically
+            does not automatically establish an advocate–client relationship.
+            A professional relationship is formed only after explicit written confirmation
+            and formal engagement.
+        </p>
+        <p>
+            Until such engagement is confirmed, no fiduciary or professional obligation
+            shall be deemed to exist.
+        </p>
+    </div>
+
+    <div class="terms-section">
+        <h3>Use of Website</h3>
+        <p>
+            Users are expected to utilize this website solely for lawful and legitimate purposes.
+            Any attempt to disrupt the website’s functionality, gain unauthorized access,
+            misuse content, or engage in unlawful conduct is strictly prohibited.
+        </p>
+        <p>
+            LegalAmicus retains the right to pursue appropriate remedies
+            in the event of misuse or violation.
+        </p>
+    </div>
+
+    <div class="terms-section">
+        <h3>Legal Information Disclaimer</h3>
+        <p>
+            The material presented on this website is intended for general informational purposes only.
+            It should not be interpreted as legal advice, nor should it substitute
+            professional consultation tailored to specific circumstances.
+        </p>
+        <p>
+            Laws and procedures may change over time, and outcomes depend on individual facts.
+            Users are encouraged to seek personalized legal guidance before taking action.
+        </p>
+    </div>
+
+    <div class="terms-section">
+        <h3>Intellectual Property Rights</h3>
+        <p>
+            All content, branding elements, design components, text, and graphical material
+            displayed on this website are the intellectual property of LegalAmicus,
+            unless otherwise stated.
+        </p>
+        <p>
+            Unauthorized copying, redistribution, or modification of any material
+            without prior written consent is strictly prohibited.
+        </p>
+    </div>
+
+    <div class="terms-section">
+        <h3>Limitation of Liability</h3>
+        <p>
+            LegalAmicus shall not be liable for any direct, indirect, incidental,
+            or consequential damages arising from the use of this website
+            or reliance upon its content.
+        </p>
+        <p>
+            While reasonable efforts are made to ensure accuracy,
+            the website is provided on an “as-is” basis without warranties
+            of completeness or uninterrupted availability.
+        </p>
+    </div>
+
+    <div class="terms-section">
+        <h3>External Links</h3>
+        <p>
+            This website may include references or links to third-party platforms
+            for informational convenience.
+            LegalAmicus does not control or endorse external websites
+            and assumes no responsibility for their content or practices.
+        </p>
+    </div>
+
+    <div class="terms-section">
+        <h3>Confidentiality Notice</h3>
+        <p>
+            Visitors are advised not to submit confidential, privileged,
+            or sensitive information through this website
+            unless a formal advocate–client engagement has been established.
+        </p>
+        <p>
+            Unsolicited communications do not automatically create confidentiality obligations.
+        </p>
+    </div>
+
+    <div class="terms-section">
+        <h3>Fees & Payments</h3>
+        <p>
+            Professional fees are determined based on the scope, complexity,
+            and nature of each matter and are discussed during consultation.
+            Legal services commence only after mutual agreement
+            regarding the terms of engagement.
+        </p>
+        <p>
+            Where online payments are enabled, transactions are securely processed
+            through the Razorpay payment gateway platform.
+            LegalAmicus does not store debit card, credit card,
+            or banking credentials on its servers.
+        </p>
+
+        <div class="payment-box">
+            All online payments are processed via Razorpay,
+            a secure third-party payment service provider,
+            ensuring encrypted and compliant financial transactions.
+        </div>
+    </div>
+
+    <div class="terms-section">
+        <h3>Governing Law & Jurisdiction</h3>
+        <p>
+            These Terms and Conditions shall be governed by the laws of India.
+            Any disputes arising from the use of this website
+            shall be subject to the jurisdiction of competent courts.
+        </p>
+    </div>
+
+    <div class="terms-section">
+        <h3>Modification of Terms</h3>
+        <p>
+            LegalAmicus reserves the right to revise or update these Terms at any time.
+            Continued use of the website following such changes
+            constitutes acceptance of the updated terms.
+        </p>
+    </div>
+
+</div>
+</section>
+
+{% endblock %}

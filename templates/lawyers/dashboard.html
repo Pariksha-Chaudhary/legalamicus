@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container py-5">
+
+    <h2 class="mb-4">Lawyer Dashboard</h2>
+
+    <div class="card mb-4 shadow">
+        <div class="card-body">
+            <h4>Total Earnings</h4>
+            <h2 class="text-success">₹{{ total_earnings }}</h2>
+        </div>
+    </div>
+
+    <h4>Paid Consultations</h4>
+
+    {% for consult in consultations %}
+        <div class="card mb-3">
+            <div class="card-body">
+                <p>Client: {{ consult.client.username }}</p>
+                <p>Amount: ₹{{ consult.amount }}</p>
+                <p>Date: {{ consult.created_at }}</p>
+            </div>
+        </div>
+    {% empty %}
+        <p>No payments yet.</p>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

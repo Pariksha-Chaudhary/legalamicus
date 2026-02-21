@@ -1,0 +1,345 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+    .gold-text {
+        color: #b68d2c;
+    }
+    .gold-bg {
+        background-color: #b68d2c;
+        color: #000;
+    }
+    .black-text {
+        color: #000;
+    }
+    .section-box {
+        background: #ffffff;
+        border: 1px solid #eee;
+        padding: 25px;
+        border-radius: 8px;
+        margin-bottom: 25px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .urgency-btn {
+    transition: all 0.3s ease;
+}
+
+.urgency-btn:hover {
+    background: #222;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+</style>
+
+<section class="py-5 bg-white">
+    <div class="container">
+        <div class="row">
+
+<!-- LEFT SIDE - PRACTICE AREAS -->
+<div class="col-lg-8">
+
+    <h2 class="fw-bold black-text mb-4">
+        Civil Law <span class="gold-text">Practice Areas</span>
+    </h2>
+
+    <div class="row">
+
+        <!-- 1 -->
+        <div class="col-md-6 mb-4">
+            <div class="section-box h-100">
+                <h5 class="fw-bold gold-text">1. Property Disputes</h5>
+                <p class="black-text">
+                    Conflicts relating to ownership, possession, title, transfer,
+                    inheritance and rights over immovable property.
+                </p>
+                <strong class="black-text">Applicable Acts:</strong>
+                <ul class="black-text small">
+                    <li>Transfer of Property Act, 1882</li>
+                    <li>Registration Act, 1908</li>
+                    <li>Indian Stamp Act, 1899</li>
+                    <li>Specific Relief Act, 1963</li>
+                    <li>Code of Civil Procedure, 1908</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="col-md-6 mb-4">
+            <div class="section-box h-100">
+                <h5 class="fw-bold gold-text">2. Partition Suits</h5>
+                <p class="black-text">
+                    Division of jointly owned or ancestral property among co-owners.
+                </p>
+                <strong class="black-text">Applicable Acts:</strong>
+                <ul class="black-text small">
+                    <li>Hindu Succession Act, 1956</li>
+                    <li>Indian Succession Act, 1925</li>
+                    <li>Partition Act, 1893</li>
+                    <li>Code of Civil Procedure, 1908</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="col-md-6 mb-4">
+            <div class="section-box h-100">
+                <h5 class="fw-bold gold-text">3. Recovery Suits</h5>
+                <p class="black-text">
+                    Legal action to recover unpaid money, debts, loans or property.
+                </p>
+                <strong class="black-text">Applicable Acts:</strong>
+                <ul class="black-text small">
+                    <li>Code of Civil Procedure, 1908</li>
+                    <li>Indian Contract Act, 1872</li>
+                    <li>Negotiable Instruments Act, 1881</li>
+                    <li>Limitation Act, 1963</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="col-md-6 mb-4">
+            <div class="section-box h-100">
+                <h5 class="fw-bold gold-text">4. Specific Performance</h5>
+                <p class="black-text">
+                    Courts compel parties to fulfill contractual obligations where
+                    compensation is insufficient.
+                </p>
+                <strong class="black-text">Applicable Acts:</strong>
+                <ul class="black-text small">
+                    <li>Specific Relief Act, 1963</li>
+                    <li>Indian Contract Act, 1872</li>
+                    <li>Transfer of Property Act, 1882</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="col-md-6 mb-4">
+            <div class="section-box h-100">
+                <h5 class="fw-bold gold-text">5. Injunction Matters</h5>
+                <p class="black-text">
+                    Court orders restraining or compelling actions to protect legal rights.
+                </p>
+                <strong class="black-text">Applicable Acts:</strong>
+                <ul class="black-text small">
+                    <li>Specific Relief Act, 1963</li>
+                    <li>Code of Civil Procedure, 1908 (Order XXXIX)</li>
+                    <li>Transfer of Property Act, 1882</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="col-md-6 mb-4">
+            <div class="section-box h-100">
+                <h5 class="fw-bold gold-text">6. Breach of Contract</h5>
+                <p class="black-text">
+                    Failure to perform contractual obligations. Remedies include
+                    compensation or specific performance.
+                </p>
+                <strong class="black-text">Applicable Acts:</strong>
+                <ul class="black-text small">
+                    <li>Indian Contract Act, 1872</li>
+                    <li>Specific Relief Act, 1963</li>
+                    <li>Sale of Goods Act, 1930</li>
+                    <li>Limitation Act, 1963</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="col-md-6 mb-4">
+            <div class="section-box h-100">
+                <h5 class="fw-bold gold-text">7. Consumer Disputes</h5>
+                <p class="black-text">
+                    Cases involving defective goods, deficient services,
+                    or unfair trade practices.
+                </p>
+                <strong class="black-text">Applicable Acts:</strong>
+                <ul class="black-text small">
+                    <li>Consumer Protection Act, 2019</li>
+                    <li>Legal Metrology Act, 2009</li>
+                    <li>Sale of Goods Act, 1930</li>
+                    <li>Indian Contract Act, 1872</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- RIGHT SIDE - PREMIUM CTA FORM -->
+<div class="col-lg-4">
+
+    <!-- CONSULTATION FORM -->
+    <div class="card shadow-lg border-0 mb-4">
+        <div class="card-body p-4">
+
+            <h4 class="fw-bold black-text mb-3">
+                Request <span class="gold-text">Consultation</span>
+            </h4>
+
+<form onsubmit="sendToWhatsApp(); return false;">
+
+    <input type="text" id="name" class="form-control mb-3" placeholder="Full Name" required>
+
+    <input type="email" id="email" class="form-control mb-3" placeholder="Email Address" required>
+
+    <input type="text" id="phone" class="form-control mb-3" placeholder="Phone Number" required>
+
+    <input type="text" id="city" class="form-control mb-3" placeholder="City" required>
+
+    <input type="text" id="state" class="form-control mb-3" placeholder="State" required>
+
+    <select id="legal_issue" class="form-control mb-3" required>
+        <option value="">Select Legal Issue</option>
+        <option>Property Dispute</option>
+        <option>Partition Suit</option>
+        <option>Recovery Suit</option>
+        <option>Specific Performance</option>
+        <option>Injunction Matter</option>
+        <option>Breach of Contract</option>
+        <option>Consumer Dispute</option>
+        <option>Other</option>
+    </select>
+
+    <textarea id="message" rows="4" class="form-control mb-3"
+        placeholder="Describe Your Legal Issue" required></textarea>
+
+    <button type="submit" class="btn gold-bg w-100 fw-bold">
+        Submit Request
+    </button>
+
+</form>
+
+        </div>
+    </div>
+<!-- PREMIUM FIND LAWYER SECTION -->
+<div class="card border-0 shadow-lg text-center p-5 mt-4"
+     style="background: linear-gradient(135deg, #b68d2c, #e5c76b); 
+            border-radius:15px; min-height:300px; display:flex; 
+            flex-direction:column; justify-content:center;">
+
+    <h4 class="fw-bold mb-3" style="color:#000; font-size:22px;">
+        Find a Civil Lawyer in Your City
+    </h4>
+
+    <p style="color:#000; font-size:15px; line-height:1.6;">
+        Instantly connect with experienced civil advocates near you.  
+        Filter by state, city and legal issue to get the right legal support.
+    </p>
+
+
+
+    <div class="mt-3">
+        <small style="color:#000; font-weight:500;">
+            ✔ Verified Advocates &nbsp; | &nbsp; ✔ Transparent Fees &nbsp; | &nbsp; ✔ Secure Consultation
+        </small>
+    </div>
+<!-- PREMIUM URGENCY BOX -->
+<div class="card border-0 shadow-lg mt-4 position-relative overflow-hidden"
+     style="background: linear-gradient(135deg, #b68d2c, #f0d37a);
+            border-radius: 18px;">
+
+    <div class="card-body text-center p-5">
+
+        <!-- Icon -->
+        <div style="font-size:40px; margin-bottom:15px;">
+            ⚖
+        </div>
+
+        <!-- Heading -->
+        <h3 class="fw-bold mb-3" style="color:#000; letter-spacing:0.5px;">
+            Facing a Civil Dispute?
+        </h3>
+
+        <!-- Divider -->
+        <div style="width:60px; height:3px; background:#000; margin:0 auto 15px auto;"></div>
+
+        <!-- Text -->
+        <p style="color:#000; font-size:16px; line-height:1.7;">
+            ⏳ <strong>Delay can weaken your case.</strong><br>
+            Act early. Protect your rights.  
+            Speak to an experienced civil lawyer today.
+        </p>
+
+        <!-- Button -->
+        <a href="/lawyers/"
+           class="btn w-100 mt-4 fw-bold urgency-btn"
+           style="background:#000; color:#fff;
+                  padding:14px; font-size:16px;
+                  border-radius:10px;">
+            🔎 Search Lawyers Near Me
+        </a>
+
+      
+
+    </div>
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+        <!-- CIVIL LAWYERS SECTION -->
+        <div class="mt-5">
+            <h3 class="fw-bold text-center black-text mb-4">
+                Our <span class="gold-text">Civil Law Experts</span>
+            </h3>
+
+            <div class="row">
+                {% for lawyer in lawyers %}
+                    <div class="col-md-4 mb-4">
+                        <div class="card shadow-sm border-0 text-center p-4">
+                            <h5 class="fw-bold gold-text">{{ lawyer.name }}</h5>
+                            <p class="black-text mb-1">
+                                {{ lawyer.experience }} Years Experience
+                            </p>
+                            <small class="text-muted">
+                                {{ lawyer.specialization }}
+                            </small>
+                        </div>
+                    </div>
+                {% empty %}
+                    <p class="text-center">No Civil Lawyers Available.</p>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+</section>
+<script>
+function sendToWhatsApp() {
+
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var phone = document.getElementById("phone").value;
+    var city = document.getElementById("city").value;
+    var state = document.getElementById("state").value;
+    var issue = document.getElementById("legal_issue").value;
+    var message = document.getElementById("message").value;
+
+    var whatsappNumber = "919928797455";  // 🔴 Replace with your number (no +)
+
+    var url = "https://wa.me/" + whatsappNumber + "?text="
+        + "Civil Law Consultation Request:%0a%0a"
+        + "Name: " + name + "%0a"
+        + "Email: " + email + "%0a"
+        + "Phone: " + phone + "%0a"
+        + "City: " + city + "%0a"
+        + "State: " + state + "%0a"
+        + "Legal Issue: " + issue + "%0a"
+        + "Details: " + message;
+
+    window.open(url, '_blank');
+}
+</script>
+
+{% endblock %}

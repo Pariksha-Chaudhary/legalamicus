@@ -1,0 +1,270 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+    .gold-text { color: #b68d2c; }
+    .gold-bg { background-color: #b68d2c; color: #000; }
+    .black-text { color: #000; }
+
+    .section-box {
+        background: #ffffff;
+        border: 1px solid #eee;
+        padding: 25px;
+        border-radius: 8px;
+        margin-bottom: 25px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .urgency-btn {
+        transition: all 0.3s ease;
+    }
+
+    .urgency-btn:hover {
+        background: #222;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+</style>
+
+<section class="py-5 bg-white">
+<div class="container">
+<div class="row">
+
+<!-- LEFT SIDE -->
+<div class="col-lg-8">
+
+<h2 class="fw-bold black-text mb-4">
+    Criminal Law <span class="gold-text">Practice Areas</span>
+</h2>
+
+<div class="row">
+
+<!-- 1 Bail -->
+<div class="col-md-6 mb-4">
+<div class="section-box h-100">
+<h5 class="fw-bold gold-text">1. Bail (Regular / Anticipatory)</h5>
+<p class="black-text">
+Legal assistance in securing regular bail after arrest and anticipatory bail 
+before arrest in non-bailable offences.
+</p>
+<strong>Applicable Laws:</strong>
+<ul class="small black-text">
+<li>Code of Criminal Procedure, 1973 (Sections 437, 438, 439)</li>
+<li>Bharatiya Nagarik Suraksha Sanhita, 2023 (New Criminal Procedure Law)</li>
+</ul>
+</div>
+</div>
+
+<!-- 2 FIR Quashing -->
+<div class="col-md-6 mb-4">
+<div class="section-box h-100">
+<h5 class="fw-bold gold-text">2. FIR Quashing</h5>
+<p class="black-text">
+Petitions filed before the High Court to quash false or malicious FIRs 
+under inherent jurisdiction.
+</p>
+<strong>Applicable Laws:</strong>
+<ul class="small black-text">
+<li>Section 482, Code of Criminal Procedure, 1973</li>
+<li>Article 226, Constitution of India</li>
+</ul>
+</div>
+</div>
+
+<!-- 3 Cheque Bounce -->
+<div class="col-md-6 mb-4">
+<div class="section-box h-100">
+<h5 class="fw-bold gold-text">3. Cheque Bounce (NI Act 138)</h5>
+<p class="black-text">
+Legal proceedings for dishonour of cheque due to insufficient funds 
+or account closure.
+</p>
+<strong>Applicable Laws:</strong>
+<ul class="small black-text">
+<li>Section 138, Negotiable Instruments Act, 1881</li>
+<li>Code of Criminal Procedure, 1973</li>
+</ul>
+</div>
+</div>
+
+<!-- 4 Cyber Crime -->
+<div class="col-md-6 mb-4">
+<div class="section-box h-100">
+<h5 class="fw-bold gold-text">4. Cyber Crime</h5>
+<p class="black-text">
+Cases involving online fraud, hacking, identity theft, data breaches, 
+and digital offences.
+</p>
+<strong>Applicable Laws:</strong>
+<ul class="small black-text">
+<li>Information Technology Act, 2000</li>
+<li>Indian Penal Code, 1860 / Bharatiya Nyaya Sanhita, 2023</li>
+</ul>
+</div>
+</div>
+
+<!-- 5 Fraud & Cheating -->
+<div class="col-md-6 mb-4">
+<div class="section-box h-100">
+<h5 class="fw-bold gold-text">5. Fraud & Cheating</h5>
+<p class="black-text">
+Defense and prosecution in cases involving financial fraud, cheating, 
+criminal breach of trust and deception.
+</p>
+<strong>Applicable Laws:</strong>
+<ul class="small black-text">
+<li>Sections 415, 420 IPC / Bharatiya Nyaya Sanhita</li>
+<li>Prevention of Corruption Act, 1988</li>
+</ul>
+</div>
+</div>
+
+<!-- 6 Domestic Violence Defense -->
+<div class="col-md-6 mb-4">
+<div class="section-box h-100">
+<h5 class="fw-bold gold-text">6. Domestic Violence Defense</h5>
+<p class="black-text">
+Legal defense in cases filed under domestic violence allegations 
+and related criminal complaints.
+</p>
+<strong>Applicable Laws:</strong>
+<ul class="small black-text">
+<li>Protection of Women from Domestic Violence Act, 2005</li>
+<li>Section 498A IPC</li>
+</ul>
+</div>
+</div>
+
+<!-- 7 Trial Representation -->
+<div class="col-md-6 mb-4">
+<div class="section-box h-100">
+<h5 class="fw-bold gold-text">7. Trial Representation</h5>
+<p class="black-text">
+Comprehensive criminal trial defense including evidence handling, 
+cross-examination, arguments, and appeals.
+</p>
+<strong>Applicable Laws:</strong>
+<ul class="small black-text">
+<li>Code of Criminal Procedure, 1973</li>
+<li>Indian Evidence Act, 1872</li>
+<li>Bharatiya Sakshya Adhiniyam, 2023</li>
+</ul>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- RIGHT SIDE -->
+<div class="col-lg-4">
+
+<!-- CONSULTATION FORM -->
+<div class="card shadow-lg border-0 mb-4">
+<div class="card-body p-4">
+<h4 class="fw-bold black-text mb-3">
+Request <span class="gold-text">Consultation</span>
+</h4>
+
+<form method="post" id="consultForm">
+{% csrf_token %}
+
+<input type="text" name="name" class="form-control mb-3" placeholder="Full Name" required>
+<input type="email" name="email" class="form-control mb-3" placeholder="Email Address" required>
+<input type="text" name="phone" class="form-control mb-3" placeholder="Phone Number" required>
+<input type="text" name="city" class="form-control mb-3" placeholder="City" required>
+<input type="text" name="state" class="form-control mb-3" placeholder="State" required>
+
+<select name="legal_issue" class="form-control mb-3" required>
+<option value="">Select Criminal Issue</option>
+<option>Bail</option>
+<option>FIR Quashing</option>
+<option>Cheque Bounce</option>
+<option>Cyber Crime</option>
+<option>Fraud / Cheating</option>
+<option>Domestic Violence</option>
+<option>Trial Representation</option>
+<option>Other</option>
+</select>
+
+<textarea name="message" rows="4" class="form-control mb-3"
+placeholder="Describe Your Issue" required></textarea>
+
+<button type="submit" class="btn gold-bg w-100 fw-bold">
+Submit Request
+</button>
+</form>
+<div class="card border-0 shadow-lg mt-4"
+style="background: linear-gradient(135deg, #b68d2c, #f0d37a);
+border-radius: 18px;">
+
+<div class="card-body text-center p-5">
+<div style="font-size:40px;">⚖</div>
+
+<h3 class="fw-bold mt-3" style="color:#000;">
+Arrest or Criminal Case?
+</h3>
+
+<p style="color:#000;">
+<strong>Immediate legal action is critical.</strong><br>
+Protect your freedom. Speak to a criminal lawyer today.
+</p>
+
+<a href="/lawyers/"
+class="btn w-100 mt-4 fw-bold urgency-btn"
+style="background:#000; color:#fff; padding:14px; border-radius:10px;">
+🔎 Find Criminal Lawyer In Your City Now
+</a>
+
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- CRIMINAL LAWYERS SECTION -->
+<div class="mt-5">
+<h3 class="fw-bold text-center black-text mb-4">
+Our <span class="gold-text">Criminal Law Experts</span>
+</h3>
+
+<div class="row">
+{% for lawyer in lawyers %}
+<div class="col-md-4 mb-4">
+<div class="card shadow-sm border-0 text-center p-4">
+<h5 class="fw-bold gold-text">{{ lawyer.name }}</h5>
+<p class="black-text mb-1">
+{{ lawyer.experience }} Years Experience
+</p>
+<small class="text-muted">
+{{ lawyer.specialization }}
+</small>
+</div>
+</div>
+{% empty %}
+<p class="text-center">No Criminal Lawyers Available.</p>
+{% endfor %}
+</div>
+</div>
+
+</div>
+</section>
+<script>
+document.getElementById("consultForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+
+    let message = `New Criminal Law Consultation Request:%0A
+Name: ${formData.get("name")}%0A
+Email: ${formData.get("email")}%0A
+Phone: ${formData.get("phone")}%0A
+City: ${formData.get("city")}%0A
+State: ${formData.get("state")}%0A
+Issue: ${formData.get("legal_issue")}%0A
+Details: ${formData.get("message")}`;
+
+    window.open(`https://wa.me/919928797455?text=${message}`, "_blank");
+});
+</script>
+
+{% endblock %}

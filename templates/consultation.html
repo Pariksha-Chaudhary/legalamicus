@@ -1,0 +1,216 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ===== PAGE WRAPPER (Isolated — does NOT affect navbar) ===== */
+.consultation-page {
+    background: linear-gradient(rgba(0,0,0,0.92), rgba(0,0,0,0.95)),
+                url("{% static 'images/marble-bg.jpg' %}") center/cover no-repeat fixed;
+    padding: 120px 8% 80px;
+    color: #eaeaea;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ===== SECTION LAYOUT ===== */
+.consultation-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+/* ===== LEFT SIDE CONTENT ===== */
+.consultation-left {
+    flex: 1;
+}
+
+.consultation-left h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px;
+    color: #d4af37;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.consultation-left p {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #cfcfcf;
+    margin-bottom: 20px;
+}
+
+.gold-divider {
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(to right, #b8860b, #ffd700);
+    margin: 30px 0;
+}
+
+/* ===== FORM BOX ===== */
+.consultation-form-box {
+    flex: 1;
+    background: rgba(0,0,0,0.85);
+    padding: 50px;
+    border: 1px solid rgba(212,175,55,0.4);
+    box-shadow: 0 0 25px rgba(212,175,55,0.1);
+}
+
+.consultation-form-box h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    color: #d4af37;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* ===== INPUT STYLING ===== */
+.consultation-form-box input,
+.consultation-form-box textarea {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    background: #111;
+    border: 1px solid rgba(212,175,55,0.4);
+    color: #fff;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.consultation-form-box input:focus,
+.consultation-form-box textarea:focus {
+    border-color: #d4af37;
+    outline: none;
+}
+
+/* ===== BUTTON ===== */
+.consultation-form-box button {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(to right, #b8860b, #ffd700);
+    border: none;
+    font-weight: 600;
+    color: #000;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.consultation-form-box button:hover {
+    opacity: 0.9;
+}
+
+/* ===== NOTE ===== */
+.consultation-note {
+    text-align: center;
+    font-size: 13px;
+    color: #aaa;
+    margin-top: 20px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+
+    .consultation-container {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .consultation-left h1 {
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .consultation-left {
+        text-align: center;
+    }
+
+    .consultation-form-box {
+        padding: 35px;
+    }
+
+}
+</style>
+
+
+<div class="consultation-page">
+
+    <div class="consultation-container">
+
+        <!-- LEFT SIDE -->
+        <div class="consultation-left">
+            <h1>Strategic Legal Representation with Absolute Confidentiality</h1>
+
+            <div class="gold-divider"></div>
+
+            <p>
+                At <strong style="color:#d4af37;">Legal Amicus</strong>, we understand that every legal matter
+                requires precision, discretion, and strategic foresight.
+            </p>
+
+            <p>
+                Whether you are facing a corporate dispute, civil litigation,
+                property matter, or criminal defense issue — our experienced
+                legal professionals are prepared to safeguard your interests.
+            </p>
+
+            <p>
+                Submit your consultation request and allow us to provide
+                clarity, direction, and strong legal advocacy.
+            </p>
+        </div>
+
+        <!-- RIGHT SIDE FORM -->
+        <div class="consultation-form-box">
+
+            <h2>Request Consultation</h2>
+
+            <form id="whatsappForm">
+                <input type="text" id="name" placeholder="Full Name" required>
+                <input type="text" id="mobile" placeholder="Mobile Number" required>
+                <input type="email" id="email" placeholder="Email Address" required>
+                <textarea id="issue" rows="4" placeholder="Describe Your Legal Issue" required></textarea>
+
+                <button type="submit">Send Consultation Request</button>
+            </form>
+
+            <p class="consultation-note">
+                We will get back to you soon. All consultations remain strictly confidential.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+document.getElementById("whatsappForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const mobile = document.getElementById("mobile").value;
+    const email = document.getElementById("email").value;
+    const issue = document.getElementById("issue").value;
+
+    const message =
+        "Hello Legal Amicus,%0A%0A" +
+        "Name: " + name + "%0A" +
+        "Mobile: " + mobile + "%0A" +
+        "Email: " + email + "%0A" +
+        "Issue: " + issue;
+
+    const phoneNumber = "919928797455";  // Replace with your WhatsApp number
+
+    const url = "https://wa.me/" + phoneNumber + "?text=" + message;
+
+    window.open(url, "_blank");
+});
+</script>
+
+{% endblock %}

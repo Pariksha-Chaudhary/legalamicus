@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="max-width:400px; margin:80px auto; padding:30px; box-shadow:0 4px 15px rgba(0,0,0,0.08); border-radius:10px; background:#fff; text-align:center;">
+
+    <h2>Enter OTP</h2>
+    <p>We have sent an OTP to your email.</p>
+
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="otp" placeholder="Enter OTP"
+               style="width:100%; padding:10px; margin:15px 0; border-radius:6px; border:1px solid #ccc;"
+               required>
+
+        <button type="submit"
+                style="width:100%; padding:10px; background:#007bff; color:white; border:none; border-radius:6px;">
+            Verify OTP
+        </button>
+    </form>
+
+    {% if messages %}
+        {% for message in messages %}
+            <p style="color:red;">{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+
+</div>
+{% endblock %}

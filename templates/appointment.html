@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+.consult-section {
+    background: #ffffff;
+    padding: 120px 8% 80px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.consult-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.consult-title h1 {
+    font-size: 42px;
+    color: #b8860b;
+    font-weight: 700;
+}
+
+.consult-box {
+    max-width: 750px;
+    margin: auto;
+    background: #f9f9f9;
+    padding: 50px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+
+.consult-box label {
+    color:#000;
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.consult-box input,
+.consult-box select,
+.consult-box textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.consult-box input:focus,
+.consult-box select:focus,
+.consult-box textarea:focus {
+    outline: none;
+    border-color: #b8860b;
+}
+
+.consult-box button {
+    width: 100%;
+    padding: 14px;
+    background: #b8860b;
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.consult-box button:hover {
+    background: #9c7309;
+}
+</style>
+
+<section class="consult-section">
+
+    <div class="consult-title">
+        <h1>Book Online Legal Consultation</h1>
+        <p>Select your preferred date, time & consultation mode</p>
+    </div>
+
+    <div class="consult-box">
+
+        <form onsubmit="sendToWhatsApp(); return false;">
+
+            <label>Full Name</label>
+            <input type="text" id="name" required>
+
+            <label>Mobile Number</label>
+            <input type="text" id="mobile" required>
+
+            <label>Email Address</label>
+            <input type="email" id="email" required>
+
+            <label>Select Practice Area</label>
+            <select id="practice">
+                <option>Criminal Law</option>
+                <option>Family Law</option>
+                <option>Corporate Law</option>
+                <option>Property Law</option>
+                <option>Taxation Law</option>
+            </select>
+
+            <label>Preferred Appointment Date</label>
+            <input type="date" id="date" required>
+
+            <label>Select Time Slot</label>
+            <select id="time">
+                <option>10:00 AM - 11:00 AM</option>
+                <option>12:00 PM - 01:00 PM</option>
+                <option>03:00 PM - 04:00 PM</option>
+                <option>05:00 PM - 06:00 PM</option>
+            </select>
+
+            <label>Consultation Mode</label>
+            <select id="mode">
+                <option>Phone Call</option>
+                <option>WhatsApp Call</option>
+                <option>Video Call (Google Meet)</option>
+                <option>Office Visit</option>
+            </select>
+
+            <label>Brief Description of Issue</label>
+            <textarea id="issue" rows="4" required></textarea>
+
+            <button type="submit">Confirm Appointment</button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<script>
+function sendToWhatsApp() {
+
+    var name = document.getElementById("name").value;
+    var mobile = document.getElementById("mobile").value;
+    var email = document.getElementById("email").value;
+    var practice = document.getElementById("practice").value;
+    var date = document.getElementById("date").value;
+    var time = document.getElementById("time").value;
+    var mode = document.getElementById("mode").value;
+    var issue = document.getElementById("issue").value;
+
+    var message = `New Legal Consultation Booking:
+
+Name: ${name}
+Mobile: ${mobile}
+Email: ${email}
+
+Practice Area: ${practice}
+Appointment Date: ${date}
+Time Slot: ${time}
+Consultation Mode: ${mode}
+
+Issue:
+${issue}`;
+
+    var phoneNumber = "919928797455";   // Replace with your WhatsApp number
+    var url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
+
+    window.open(url, "_blank");
+}
+</script>
+
+{% endblock %}

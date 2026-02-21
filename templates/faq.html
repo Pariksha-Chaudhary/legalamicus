@@ -1,0 +1,333 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<style>
+:root{
+    --gold:#C6A74E;
+    --black:#111111;
+    --white:#ffffff;
+    --light:#f8f8f8;
+}
+
+/* Page Background */
+body{
+    background:var(--white);
+    font-family:'Poppins',sans-serif;
+    color:var(--black);
+}
+
+/* HERO */
+.faq-hero{
+    background:var(--black);
+    color:white;
+    padding:100px 20px;
+    text-align:center;
+}
+
+.faq-hero h1{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(28px,5vw,48px);
+    margin-bottom:15px;
+}
+
+.faq-hero span{
+    color:var(--gold);
+}
+
+.faq-hero p{
+    max-width:700px;
+    margin:auto;
+    font-size:16px;
+    opacity:0.85;
+}
+
+/* SECTION */
+.faq-section{
+    padding:90px 20px;
+}
+
+.container-custom{
+    max-width:900px;
+    margin:auto;
+}
+
+/* ACCORDION */
+.faq-item{
+    border-bottom:1px solid #e5e5e5;
+    margin-bottom:15px;
+}
+
+.faq-question{
+    width:100%;
+    background:none;
+    border:none;
+    text-align:left;
+    padding:20px 10px;
+    font-size:17px;
+    font-weight:500;
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:var(--black);
+    transition:0.3s;
+}
+
+.faq-question:hover{
+    color:var(--gold);
+}
+
+.faq-icon{
+    font-size:22px;
+    color:var(--gold);
+    transition:0.3s;
+}
+
+.faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.4s ease;
+    padding:0 10px;
+    color:#555;
+    line-height:1.7;
+    font-size:15px;
+}
+
+.faq-item.active .faq-answer{
+    max-height:200px;
+    padding-bottom:20px;
+}
+
+.faq-item.active .faq-icon{
+    transform:rotate(45deg);
+}
+
+/* CTA */
+.faq-cta{
+    background:var(--light);
+    padding:70px 20px;
+    text-align:center;
+}
+
+.faq-cta h2{
+    font-family:'Playfair Display',serif;
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+.faq-btn{
+    background:var(--gold);
+    padding:12px 30px;
+    border-radius:40px;
+    text-decoration:none;
+    font-weight:600;
+    color:black;
+    transition:0.3s;
+}
+
+.faq-btn:hover{
+    background:var(--black);
+    color:white;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .faq-section{
+        padding:60px 15px;
+    }
+}
+</style>
+
+<!-- HERO -->
+<section class="faq-hero">
+    <h1>Frequently Asked <span>Questions</span></h1>
+    <p>
+        Clear answers to common legal queries regarding litigation,
+        documentation, and advisory services at LegalAmicus.
+    </p>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-section">
+<div class="container-custom">
+
+   <!-- FAQ 1 -->
+<div class="faq-item">
+    <button class="faq-question">
+        What types of legal matters does LegalAmicus handle?
+        <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+        LegalAmicus provides representation and advisory services across civil litigation,
+        criminal defense, corporate disputes, taxation matters, property litigation,
+        constitutional remedies, and legal documentation. Each matter is evaluated
+        strategically based on its legal and factual matrix.
+    </div>
+</div>
+
+<!-- FAQ 2 -->
+<div class="faq-item">
+    <button class="faq-question">
+        How long does a court case usually take in India?
+        <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+        The duration of a case depends on jurisdiction, complexity, procedural stage,
+        and court workload. Some matters conclude within months, while others may extend longer.
+        During consultation, we provide a realistic procedural roadmap and expected timelines.
+    </div>
+</div>
+
+<!-- FAQ 3 -->
+<div class="faq-item">
+    <button class="faq-question">
+        What should I bring for my first consultation?
+        <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+        You should bring all relevant documents, notices, agreements, court papers,
+        communication records, and a brief written summary of the issue.
+        Complete documentation allows us to provide precise and strategic legal advice.
+    </div>
+</div>
+
+<!-- FAQ 4 -->
+<div class="faq-item">
+    <button class="faq-question">
+        Are consultations confidential?
+        <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+        Yes. All communications are protected under advocate-client confidentiality.
+        Information shared during consultation remains strictly private and cannot
+        be disclosed without your consent.
+    </div>
+</div>
+
+<!-- FAQ 5 -->
+<div class="faq-item">
+    <button class="faq-question">
+        Do you handle urgent legal matters?
+        <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+        Yes. Urgent matters such as bail applications, injunctions, stay orders,
+        notice replies, and time-bound filings are handled with priority.
+        Immediate legal response can significantly impact case outcomes.
+    </div>
+</div>
+
+<!-- FAQ 6 -->
+<div class="faq-item">
+    <button class="faq-question">
+        How are legal fees structured?
+        <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+        Fees vary depending on the complexity, court level, documentation volume,
+        and procedural requirements. We ensure transparent fee discussions before
+        engagement, so clients clearly understand the scope and financial commitment.
+    </div>
+</div>
+
+<!-- FAQ 7 -->
+<div class="faq-item">
+    <button class="faq-question">
+        Can you review contracts or agreements drafted by others?
+        <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+        Yes. We provide detailed legal review, clause-by-clause analysis,
+        risk assessment, and modification recommendations to ensure your
+        agreements are legally sound and strategically protective.
+    </div>
+</div>
+
+<!-- FAQ 8 -->
+<div class="faq-item">
+    <button class="faq-question">
+        Do you represent clients in High Court and Supreme Court matters?
+        <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+        We handle matters across appropriate judicial forums depending on jurisdiction.
+        Appellate, writ, and constitutional matters are undertaken based on case merits
+        and legal viability.
+    </div>
+</div>
+
+<!-- FAQ 9 -->
+<div class="faq-item">
+    <button class="faq-question">
+        What is the process after filing a case?
+        <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+        Once a matter is filed, it proceeds through admission, notice issuance,
+        evidence submission, arguments, and final adjudication.
+        We keep clients informed at each procedural stage.
+    </div>
+</div>
+
+<!-- FAQ 10 -->
+<div class="faq-item">
+    <button class="faq-question">
+        Can disputes be resolved without going to court?
+        <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+        Yes. Many disputes can be resolved through negotiation, mediation,
+        arbitration, or structured settlement discussions.
+        We always evaluate alternative dispute resolution before full litigation.
+    </div>
+</div>
+
+<!-- FAQ 11 -->
+<div class="faq-item">
+    <button class="faq-question">
+        What happens if I receive a legal notice?
+        <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+        A legal notice requires timely and strategic response.
+        Ignoring it may weaken your position.
+        We analyze the notice, assess legal exposure, and draft
+        an appropriate reply safeguarding your rights.
+    </div>
+</div>
+
+<!-- FAQ 12 -->
+<div class="faq-item">
+    <button class="faq-question">
+        How do I initiate representation with LegalAmicus?
+        <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+        Representation begins with a consultation and document review.
+        Upon mutual agreement, we formalize engagement and proceed
+        with strategic planning and legal action.
+    </div>
+</div>
+
+</div>
+</section>
+
+<!-- CTA -->
+<section class="faq-cta">
+    <h2>Still Have Questions?</h2>
+    <a href="/consultation/" class="faq-btn">Contact LegalAmicus</a>
+</section>
+
+<!-- JS for Accordion -->
+<script>
+document.querySelectorAll(".faq-question").forEach(button => {
+    button.addEventListener("click", () => {
+        const item = button.parentElement;
+        item.classList.toggle("active");
+    });
+});
+</script>
+
+{% endblock %}

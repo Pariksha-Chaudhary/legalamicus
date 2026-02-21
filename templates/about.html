@@ -1,0 +1,381 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+<style>
+:root{
+    --gold:#C6A74E;
+    --black:#111111;
+    --dark:#1a1a1a;
+    --white:#ffffff;
+    --light:#f7f7f7;
+}
+
+/* GLOBAL THEME BACKGROUND */
+body{
+    font-family:'Poppins',sans-serif;
+    background:
+        linear-gradient(rgba(255,255,255,0.96), rgba(255,255,255,0.96)),
+        url("{% static 'images/subtle-texture.png' %}");
+    background-size:cover;
+    color:var(--black);
+    overflow-x:hidden;
+}
+
+/* HEADINGS TYPOGRAPHY */
+h1,h2,h3{
+    font-family:'Playfair Display',serif;
+    letter-spacing:0.5px;
+}
+
+/* HERO */
+.hero{
+    background:var(--black);
+    color:white;
+    padding:120px 20px 100px;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:clamp(32px,5vw,52px);
+    margin-bottom:20px;
+}
+
+.hero span{
+    color:var(--gold);
+}
+
+.hero p{
+    max-width:750px;
+    margin:auto;
+    font-size:17px;
+    line-height:1.8;
+    opacity:0.9;
+}
+
+/* SECTION */
+.section{
+    padding:100px 20px;
+}
+
+.container-custom{
+    max-width:1150px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    font-size:clamp(24px,3vw,34px);
+    margin-bottom:60px;
+    position:relative;
+}
+
+.section-title::after{
+    content:"";
+    width:70px;
+    height:3px;
+    background:var(--gold);
+    display:block;
+    margin:18px auto 0;
+}
+
+/* GRID */
+.grid-3{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:35px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    padding:40px 30px;
+    border-radius:14px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.06);
+    transition:0.4s ease;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-top:4px solid var(--gold);
+}
+
+.card h4{
+    color:var(--gold);
+    margin-bottom:15px;
+    font-size:18px;
+}
+
+.card p{
+    font-size:15px;
+    line-height:1.7;
+    color:#444;
+}
+
+/* MISSION VISION SECTION */
+.mission-vision{
+    background:var(--dark);
+    color:white;
+}
+
+.mv-box{
+    padding:50px;
+    border-left:4px solid var(--gold);
+}
+
+.mv-box h3{
+    color:var(--gold);
+    margin-bottom:20px;
+    font-size:26px;
+}
+
+.mv-box p{
+    line-height:1.8;
+    font-size:16px;
+    opacity:0.9;
+}
+
+/* IMPACT */
+.impact{
+    background:var(--light);
+    text-align:center;
+}
+
+.impact-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:40px;
+    margin-top:50px;
+}
+
+.impact-number{
+    font-family:'Playfair Display',serif;
+    font-size:42px;
+    color:var(--gold);
+}
+
+.impact-text{
+    margin-top:10px;
+    font-size:14px;
+    letter-spacing:1px;
+}
+
+/* TEAM */
+.team{
+    text-align:center;
+}
+
+.founder{
+    margin-bottom:70px;
+}
+
+.founder h3{
+    font-size:26px;
+    color:var(--gold);
+}
+
+.founder p{
+    max-width:650px;
+    margin:auto;
+    font-size:15px;
+    line-height:1.7;
+    color:#555;
+}
+
+.co-founders{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+/* CTA */
+.cta{
+    background:var(--black);
+    color:white;
+    text-align:center;
+    padding:110px 20px;
+}
+
+.cta h2{
+    font-size:30px;
+    margin-bottom:30px;
+}
+
+.cta-btn{
+    display:inline-block;
+    padding:14px 38px;
+    background:var(--gold);
+    color:black;
+    border-radius:50px;
+    font-weight:600;
+    text-decoration:none;
+    transition:0.3s ease;
+}
+
+.cta-btn:hover{
+    background:white;
+    transform:scale(1.05);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .section{
+        padding:70px 15px;
+    }
+    .hero{
+        padding:90px 15px 80px;
+    }
+    .mv-box{
+        padding:30px;
+    }
+}
+/* SPLIT BACKGROUND LAYOUT */
+
+.split-background{
+    position:relative;
+}
+
+.split-background::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:50%;
+    height:100%;
+    background:#111111;  /* Black side */
+    z-index:-1;
+}
+
+.split-background::after{
+    content:"";
+    position:absolute;
+    top:0;
+    right:0;
+    width:50%;
+    height:100%;
+    background:#ffffff;  /* White side */
+    z-index:-1;
+}
+
+/* Ensure content stays readable */
+.split-content{
+    position:relative;
+    z-index:2;
+}
+
+</style>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>About <span>LegalAmicus</span></h1>
+    <p>
+        A litigation-driven Indian law firm built on precision, integrity, and strategic legal execution.
+        We represent individuals and enterprises with discipline, discretion, and measurable impact.
+    </p>
+</section>
+
+<!-- WHO WE ARE -->
+<section class="section">
+<div class="container-custom">
+    <h2 class="section-title">Who We Are</h2>
+    <div class="grid-3">
+        <div class="card">
+            <h4>Litigation Excellence</h4>
+            <p>Structured preparation, research-backed arguments, and courtroom confidence define our practice.</p>
+        </div>
+        <div class="card">
+            <h4>Strategic Advisory</h4>
+            <p>We design preventive legal frameworks that minimize disputes and maximize protection.</p>
+        </div>
+        <div class="card">
+            <h4>Client Commitment</h4>
+            <p>Transparent communication, ethical practice, and personalized legal strategy.</p>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- MISSION & VISION -->
+<section class="section mission-vision">
+<div class="container-custom grid-3">
+    <div class="mv-box">
+        <h3>Our Mission</h3>
+        <p>
+            To deliver high-quality, ethical, and strategically crafted legal services
+            that protect rights, resolve disputes efficiently, and create long-term legal security for our clients.
+        </p>
+    </div>
+    <div class="mv-box">
+        <h3>Our Vision</h3>
+        <p>
+            To establish LegalAmicus as a nationally respected boutique law firm
+            known for intellectual depth, courtroom strength, and unwavering professional integrity.
+        </p>
+    </div>
+</div>
+</section>
+
+<!-- IMPACT -->
+<section class="section impact">
+<div class="container-custom">
+    <h2 class="section-title">Our Impact</h2>
+    <div class="impact-grid">
+        <div>
+            <div class="impact-number">2000+</div>
+            <div class="impact-text">Cases Handled</div>
+        </div>
+        <div>
+            <div class="impact-number">98%</div>
+            <div class="impact-text">Client Satisfaction</div>
+        </div>
+        <div>
+            <div class="impact-number">20+</div>
+            <div class="impact-text">Practice Areas</div>
+        </div>
+        <div>
+            <div class="impact-number">4</div>
+            <div class="impact-text">Founding Members</div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- TEAM -->
+<section class="section team">
+<div class="container-custom">
+    <h2 class="section-title">Leadership</h2>
+
+    <div class="founder">
+        <h3>Advocate Praduman Bishnoi</h3>
+        <p>
+            Founder of LegalAmicus, leading the firm with disciplined litigation strategy,
+            structured advisory expertise, and unwavering professional ethics.
+        </p>
+    </div>
+
+    <div class="co-founders">
+        <div class="card">
+            <h4>Advocate Shekhar Bainsla</h4>
+            <p>Civil and corporate litigation specialist with strong strategic advisory depth.</p>
+        </div>
+        <div class="card">
+            <h4>Advocate Vanshika Garg</h4>
+            <p>Focused on family law, documentation excellence, and client-centered dispute resolution.</p>
+        </div>
+        <div class="card">
+            <h4>Advocate Divyansh Tiwari</h4>
+            <p>Taxation, compliance and regulatory litigation expert delivering precision-driven solutions.</p>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+    <h2>Protect Your Legal Position with Confidence</h2>
+    <a href="/appointment/" class="cta-btn">Book Consultation</a>
+</section>
+
+{% endblock %}

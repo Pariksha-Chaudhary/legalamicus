@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container py-5">
+    <h2>Platform Revenue</h2>
+
+    <div class="card shadow p-4">
+        <h4>Total Revenue</h4>
+        <h2 class="text-success">₹{{ total_revenue }}</h2>
+
+        <hr>
+
+        <p>Total Paid Consultations: {{ total_consultations }}</p>
+    </div>
+</div>
+
+{% endblock %}

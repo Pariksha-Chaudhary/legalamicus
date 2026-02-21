@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container py-5">
+    <h2 class="mb-4">My Consultations</h2>
+
+    {% for consult in consultations %}
+        <div class="card mb-3 shadow-sm">
+            <div class="card-body">
+                <h5>{{ consult.lawyer.user.username }}</h5>
+                <p>Amount: ₹{{ consult.amount }}</p>
+                <p>Status:
+                    {% if consult.is_paid %}
+                        <span class="text-success">Paid</span>
+                    {% else %}
+                        <span class="text-danger">Pending</span>
+                    {% endif %}
+                </p>
+                <p>Date: {{ consult.created_at }}</p>
+            </div>
+        </div>
+    {% empty %}
+        <p>No consultations yet.</p>
+    {% endfor %}
+</div>
+
+{% endblock %}
