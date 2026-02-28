@@ -165,8 +165,7 @@ AUTH_USER_MODEL = 'accounts.User'
 
 #  for deploy 
 
-SECRET_KEY = os.environ.get("SECRET_KEY")
-
+SECRET_KEY = os.environ.get("SECRET_KEY", "dev-secret-key-only-for-local")
 RAZORPAY_KEY_ID = os.environ.get("RAZORPAY_KEY_ID")
 RAZORPAY_KEY_SECRET = os.environ.get("RAZORPAY_KEY_SECRET")
 

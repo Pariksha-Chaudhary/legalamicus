@@ -1,198 +1,268 @@
 {% extends "base.html" %}
 
 {% block content %}
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+<section class="hero-modern">
+    <div class="overlay"></div>
 
-<section class="hero">
-    <div class="container">
-        <h1> Legal Representation.<br>For Those Who Expect Excellence.</h1>
-        <p class="mt-3 text-secondary">
-            Connect with top verified lawyers across India instantly.<br>Strategic Legal Counsel for Civil, Corporate &
-            High-Value Disputes.
-        </p>
-        <a href="/lawyers/" class="btn gold-btn btn-lg mt-4">
-            Book Consultation Now
-        </a>
-        <a href="{% url 'practice_areas' %}" class="btn gold-btn btn-lg mt-4">
-            Explore Practice Areas
-        </a>
+    <div class="container hero-wrapper">
+        <div class="hero-text">
+            <h1>
+                <span class="brand-gold">Legal</span><span class="brand-black">Amicus</span><br>
+                Legal Representation For Those Who Expect Excellence
+            </h1>
 
+            <p>
+                Connect with verified top lawyers across India.
+                Strategic legal counsel for civil, corporate and high-value disputes.
+            </p>
+
+            <div class="hero-btns">
+                <a href="/lawyers/" class="btn btn-consult">
+                    Book Consultation
+                </a>
+
+                <a href="{% url 'practice_areas' %}" class="btn btn-outline">
+                    Explore Practice Areas
+                </a>
+            </div>
+        </div>
     </div>
-
-
 </section>
 
 <section class="lux-docs">
     <div class="container">
-        <div class="row align-items-center">
+        <div class="doc-wrapper">
 
-            <!-- LEFT SIDE -->
-            <div class="col-lg-4 doc-left">
-                <h2>Documentation & Verification</h2>
-                <p>
-                    We provide professionally drafted legal documentation 
-                    ensuring compliance, clarity, and enforceability. 
-                    Our expert team handles drafting and verification 
-                    with strict confidentiality and precision.
-                </p>
+            <!-- LEFT IMAGE -->
+            <div class="doc-image">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjEGc-EeNTbFc9lh-QeievAZCVdSyD0lFO6SvRBPwvONOAes5CK13fKZNIU-p1rRrekE1lXQNOHxjF1pWTIogLN7eA_oD3Ka5-mKPES5972d_FUSSVRl1C_efbTOenJrXnoZZJwWiJClOHic7O5Hs82Ym1oJCm2-oGVQPaaCo1VeCF8OqffOXoSQ0EQ/w600-h315-p-k-no-nu/Composition%20and%20Functions%20of%20the%20Supreme%20Court%20of%20India.png"
+                     alt="Legal Documents">
             </div>
 
-            <!-- RIGHT SIDE -->
-            <div class="col-lg-8">
-                <div class="row g-3 justify-content-end">
+            <!-- RIGHT CONTENT -->
+            <div class="doc-content">
+                <h2>
+  <span style="color: #000;">Documentation</span> 
+  <span style="color: #D4AF37;">&</span> 
+  <span style="color: #000;">Drafting</span>
+</h2>
 
-                    <div class="col-md-6 col-lg-4">
-                        <div class="doc-card">
-                            <h6>Legal Notices</h6>
-                            <p>Professionally drafted dispute notices.</p>
-                            <a href="{% url 'practice:documentation' %}" class="doc-btn">Open</a>
-                        </div>
-                    </div>
+                <p>
+                    Professionally drafted affidavits, agreements,
+                    legal notices and property documentation ensuring
+                    compliance, clarity and confidentiality.
+                </p>
 
-                    <div class="col-md-6 col-lg-4">
-                        <div class="doc-card">
-                            <h6>Affidavits</h6>
-                            <p>Accurate legally compliant affidavits.</p>
-                            <a href="{% url 'practice:documentation' %}" class="doc-btn">Open</a>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4">
-                        <div class="doc-card">
-                            <h6>Agreements</h6>
-                            <p>Business & custom legal agreements.</p>
-                            <a href="{% url 'practice:documentation' %}" class="doc-btn">Open</a>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4">
-                        <div class="doc-card">
-                            <h6>Sale Deed</h6>
-                            <p>Property transaction documentation.</p>
-                            <a href="{% url 'practice:documentation' %}" class="doc-btn">Open</a>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4">
-                        <div class="doc-card">
-                            <h6>Will Drafting</h6>
-                            <p>Secure succession planning services.</p>
-                            <a href="{% url 'practice:documentation' %}" class="doc-btn">Open</a>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4">
-                        <div class="doc-card">
-                            <h6>Power of Attorney</h6>
-                            <p>General & special POA drafting.</p>
-                            <a href="{% url 'practice:documentation' %}" class="doc-btn">Open</a>
-                        </div>
-                    </div>
-
+                <div class="doc-options">
+                    <a href="{% url 'practice:documentation' %}" class="smoke-btn">Legal Notices</a>
+                    <a href="{% url 'practice:documentation' %}" class="smoke-btn">Affidavits</a>
+                    <a href="{% url 'practice:documentation' %}" class="smoke-btn">Agreements</a>
+                    <a href="{% url 'practice:documentation' %}" class="smoke-btn">Sale Deed</a>
+                    <a href="{% url 'practice:documentation' %}" class="smoke-btn">Will Drafting</a>
+                    <a href="{% url 'practice:documentation' %}" class="smoke-btn">Power of Attorney</a>
+                    <a href="{% url 'practice:documentation' %}" class="smoke-btn">Gift Deed</a>
                 </div>
             </div>
 
         </div>
     </div>
 </section>
-
 
 <!-- why choose us -->
+<section class="lux-why-final">
+  <div class="container">
 
-<section class="lux-why">
-    <div class="container position-relative">
-
-        <div class="gold-divider-vertical d-none d-lg-block"></div>
-
-        <div class="row align-items-center">
-
-            <!-- LEFT SIDE -->
-            <div class="col-lg-5 why-left">
-                <h2>Why Choose Our Firm</h2>
-                <p>
-                    Our firm delivers strategic legal solutions grounded in deep 
-                    expertise, ethical practice, and client-focused representation. 
-                    We are committed to protecting your rights while ensuring 
-                    clarity, precision, and strong advocacy at every stage.
-                </p>
-            </div>
-
-            <!-- RIGHT SIDE -->
-            <div class="col-lg-7">
-
-                <div class="why-item">
-                    <div class="why-icon">⚖</div>
-                    <div class="why-text">
-                        <h6>Proven Legal Expertise</h6>
-                        <p>Extensive courtroom and advisory experience across diverse legal domains.</p>
-                    </div>
-                </div>
-
-                <div class="why-item">
-                    <div class="why-icon">🔐</div>
-                    <div class="why-text">
-                        <h6>Absolute Confidentiality</h6>
-                        <p>Strict adherence to professional ethics and client privacy standards.</p>
-                    </div>
-                </div>
-
-                <div class="why-item">
-                    <div class="why-icon">📄</div>
-                    <div class="why-text">
-                        <h6>Meticulous Documentation</h6>
-                        <p>Accurate, enforceable, and legally compliant drafting services.</p>
-                    </div>
-                </div>
-
-                <div class="why-item">
-                    <div class="why-icon">🏛</div>
-                    <div class="why-text">
-                        <h6>Strategic Representation</h6>
-                        <p>Focused advocacy aimed at achieving favorable legal outcomes.</p>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
+    <div class="text-center mb-4">
+      <h2 class="section-title">Why Choose Us</h2>
+      <div class="gold-line"></div>
     </div>
+
+    <!-- DESKTOP: GRID SINGLE ROW -->
+    <div class="row g-4 d-none d-md-flex justify-content-between">
+
+      <div class="col-md-6 col-lg-2">
+        <div class="why-box">
+          <img src="https://images.unsplash.com/photo-1589216532372-1c2a367900d9?q=80&w=1200&auto=format&fit=crop" alt="">
+          <h5>Support at Every Step</h5>
+          <p>Legal matters can be stressful. We guide you with clarity, patience, and understanding.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-2">
+        <div class="why-box">
+          <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1200&auto=format&fit=crop" alt="">
+          <h5>Clear & Honest Advice</h5>
+          <p>We explain your options in simple language. You can make informed decisions with confidence.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-2">
+        <div class="why-box">
+          <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200&auto=format&fit=crop" alt="">
+          <h5>Personal Attention</h5>
+          <p>Every client and case is important to us. We provide dedicated attention to your concerns.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-2">
+        <div class="why-box">
+          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1200&auto=format&fit=crop" alt="">
+          <h5>Practical Legal Solutions</h5>
+          <p>We focus on solutions that work in real life. Our advice is realistic, strategic, and achievable.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-2">
+        <div class="why-box">
+          <img src="https://images.unsplash.com/photo-1555374018-13a8994ab246?q=80&w=1200&auto=format&fit=crop" alt="">
+          <h5>Trust & Transparency</h5>
+          <p>Open communication builds strong relationships. We keep you informed and involved throughout your case.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- MOBILE: FULL CAROUSEL -->
+    <div id="mobileCarousel" class="carousel slide d-md-none mt-4" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="carousel-content">
+            <img src="https://images.unsplash.com/photo-1589216532372-1c2a367900d9?q=80&w=1200&auto=format&fit=crop" class="d-block w-100" alt="">
+            <div class="carousel-text">
+              <h5>Support at Every Step</h5>
+              <p>Legal matters can be stressful. We guide you with clarity, patience, and understanding.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="carousel-content">
+            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1200&auto=format&fit=crop" class="d-block w-100" alt="">
+            <div class="carousel-text">
+              <h5>Clear & Honest Advice</h5>
+              <p>We explain your options in simple language. You can make informed decisions with confidence.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <div class="carousel-content">
+            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200&auto=format&fit=crop" class="d-block w-100" alt="">
+            <div class="carousel-text">
+              <h5>Personal Attention</h5>
+              <p>Every client and case is important to us. We provide dedicated attention to your concerns.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="carousel-item">
+          <div class="carousel-content">
+            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1200&auto=format&fit=crop" class="d-block w-100" alt="">
+            <div class="carousel-text">
+              <h5>Practical Legal Solutions</h5>
+              <p>We focus on solutions that work in real life. Our advice is realistic, strategic, and achievable.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="carousel-item">
+          <div class="carousel-content">
+            <img src="https://images.unsplash.com/photo-1555374018-13a8994ab246?q=80&w=1200&auto=format&fit=crop" class="d-block w-100" alt="">
+            <div class="carousel-text">
+              <h5>Trust & Transparency</h5>
+              <p>Open communication builds strong relationships. We keep you informed and involved throughout your case.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#mobileCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#mobileCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+  </div>
 </section>
 
-<!-- CTA-->
- <section class="lux-cta">
-    <div class="container">
-        <div class="row align-items-center">
+<section class="legal-services-split">
+  <div class="container">
 
-            <!-- LEFT SIDE FORM -->
-                <div class="col-lg-7 cta-text">
-                <h2>Need Immediate <span>Legal Assistance?</span></h2>
-                <p>
-                    Schedule a confidential consultation with our experienced
-                    legal team. We provide strategic advice, clear legal guidance,
-                    and strong representation tailored to your case.
-                </p>
-            </div>
-      
+    <div class="services-wrapper">
 
-            <!-- RIGHT SIDE TEXT -->
-         
+      <!-- LEFT CONTENT -->
+      <div class="services-content">
+        <h2 class="section-title">
+          Our <span>Legal Services</span>
+        </h2>
 
-                  <div class="col-lg-5">
-                <div class="cta-form">
-                    <h4>Request Consultation</h4>
+     <div class="services-buttons">
 
-                    <form id="whatsappForm">
-                        <input type="text" id="name" placeholder="Full Name" required>
-                        <input type="tel" id="mobile" placeholder="Mobile Number" required>
-                        <textarea id="issue" rows="4" placeholder="Describe Your Legal Issue" required></textarea>
-                        <button type="submit">Submit & Connect</button>
-                    </form>
+  <a href="{% url 'practice:civil_law' %}" class="service-btn">Civil Law</a>
 
-                </div>
-            </div>
+  <a href="{% url 'practice:criminal_law' %}" class="service-btn">Criminal Law</a>
 
-        </div>
+  <a href="{% url 'practice:family_law' %}" class="service-btn">Family Law</a>
+
+  <a href="{% url 'practice:corporate_law' %}" class="service-btn">Corporate & Business Law</a>
+
+  <a href="{% url 'practice:property_law' %}" class="service-btn">Property & Real Estate Law</a>
+
+   <a href="{% url 'practice:taxation_gst' %}" class="service-btn">Taxation & Employment</a>
+
+  <a href="{% url 'practice:services_employment' %}" class="service-btn">Services & Employment Law</a>
+
+
+
+</div>
+      </div>
+
+      <!-- RIGHT IMAGE -->
+      <div class="services-image">
+        <img src="https://image7.slideserve.com/12285156/customised-legal-services-l.jpg"
+             alt="Legal Services">
+      </div>
+
     </div>
+
+  </div>
 </section>
+<section class="lux-cta-whatsapp">
+  <div class="container">
+    <div class="cta-content">
+
+      <!-- Left text -->
+      <div class="cta-text">
+        <h2>Need Immediate <span>Legal Assistance?</span></h2>
+        <p>Schedule a confidential consultation with our experienced legal team. We provide strategic advice, clear legal guidance, and strong representation tailored to your case.</p>
+      </div>
+
+      <!-- Right form -->
+      <div class="cta-form">
+        <h4>Request Consultation</h4>
+        <form id="whatsappForm">
+          <input type="text" id="name" placeholder="Full Name" required>
+          <input type="tel" id="mobile" placeholder="Mobile Number" required>
+          <textarea id="issue" rows="4" placeholder="Describe Your Legal Issue" required></textarea>
+          <button type="submit">Submit & Connect</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 <!-- IMPACT SECTION -->
 <section class="py-5" style="background:#ffffff;">
     <div class="container text-center">
