@@ -19,8 +19,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-@login_required
-@login_required
+
 def book_lawyer(request, lawyer_id):
     lawyer = get_object_or_404(Lawyer, id=lawyer_id)
 
@@ -32,7 +31,7 @@ def book_lawyer(request, lawyer_id):
     # 🔥 DELETE OLD UNPAID CONSULTATIONS (IMPORTANT)
     Consultation.objects.filter(
         lawyer=lawyer,
-        client=request.user,
+        client=request.user if request.user.is_authenticated else None,
         is_paid=False
     ).delete()
 
@@ -60,7 +59,7 @@ def book_lawyer(request, lawyer_id):
         "amount": lawyer.fee
     })
 
-@login_required
+
 def payment_success(request, lawyer_id):
 
     razorpay_payment_id = request.GET.get("payment_id")
