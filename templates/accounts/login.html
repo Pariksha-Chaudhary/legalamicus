@@ -3,6 +3,13 @@
 
 <div class="card p-4 shadow">
     <h4 class="text-center mb-4">Login</h4>
+    {% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{% if message.tags == 'error' %}danger{% else %}success{% endif %}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
 
     <form method="POST">
         {% csrf_token %}

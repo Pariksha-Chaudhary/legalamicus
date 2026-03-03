@@ -81,24 +81,30 @@ def verify_email(request):
 
 def login_view(request):
     if request.method == "POST":
-        username = request.POST.get("username")
+        username = request.POST.get("username").strip()
         password = request.POST.get("password")
+
+        if not username or not password:
+            messages.error(request, "Please enter both username and password.")
+            return redirect("login")
 
         user = authenticate(request, username=username, password=password)
 
-        if user:
-            if not user.is_email_verified:
-                messages.error(request, "Please verify your email first")
+        if user is not None:
+
+            # Email verification check
+            if hasattr(user, "is_email_verified") and not user.is_email_verified:
+                messages.error(request, "Please verify your email before logging in.")
                 return redirect("login")
 
             login(request, user)
-            return redirect("/")
+            messages.success(request, f"Welcome back, {user.username}!")
+            return redirect("home")   # change if needed
 
-        messages.error(request, "Invalid credentials")
+        else:
+            messages.error(request, "Invalid username or password.")
 
     return render(request, "accounts/login.html")
-
-
 # ================= FORGOT PASSWORD =================
 
 def forgot_password(request):

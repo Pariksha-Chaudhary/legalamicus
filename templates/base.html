@@ -1298,7 +1298,19 @@ margin-top: 10px;
                     </ul>
                 </div>
             </div>
+
     </nav>
+        <!-- ✅ GLOBAL MESSAGES (Moved Outside Navbar) -->
+    <div class="container mt-3">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{% if message.tags == 'error' %}danger{% elif message.tags == 'success' %}success{% else %}info{% endif %} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
 
     {% block content %}{% endblock %}
 
