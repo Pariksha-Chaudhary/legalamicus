@@ -47,7 +47,7 @@ def book_lawyer(request, lawyer_id):
 
     Consultation.objects.create(
         lawyer=lawyer,
-        client=request.user,
+          client=request.user if request.user.is_authenticated else None,
         amount=lawyer.fee,
         razorpay_order_id=order["id"]
     )
@@ -66,9 +66,9 @@ def payment_success(request, lawyer_id):
     razorpay_order_id = request.GET.get("order_id")
     razorpay_signature = request.GET.get("signature")
 
+    # 🔥 DO NOT FILTER BY USER
     consultation = Consultation.objects.filter(
-        razorpay_order_id=razorpay_order_id,
-        client=request.user
+        razorpay_order_id=razorpay_order_id
     ).first()
 
     if not consultation:
@@ -98,7 +98,6 @@ def payment_success(request, lawyer_id):
     whatsapp_url = f"https://wa.me/{lawyer.whatsapp_number}?text=Hello, I have completed payment."
 
     return redirect(whatsapp_url)
-
 
 @login_required
 def my_consultations(request):
